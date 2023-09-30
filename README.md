@@ -1,2 +1,2 @@
-# GodotGameTemplate
+# NightsBastion
 A simple template to speed up game creation
