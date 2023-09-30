@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://lrvuwqkgvays"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://lrvuwqkgvays"]
 
 [ext_resource type="FontFile" uid="uid://bxhm02ampummu" path="res://fonts/century-gothic/GOTHICB.TTF" id="1_k70o3"]
 [ext_resource type="FontFile" uid="uid://chhwlvu1k8xnw" path="res://fonts/century-gothic/Century Gothic.ttf" id="1_xcvla"]
@@ -14,6 +14,12 @@ bg_color = Color(0.768627, 0.721569, 0.847059, 0.996078)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2351m"]
 bg_color = Color(0.231373, 0.188235, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ckt4"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlsgi"]
+bg_color = Color(0.713726, 0.941176, 0.713726, 1)
 
 [resource]
 default_font = ExtResource("1_xcvla")
@@ -35,3 +41,11 @@ Label/constants/shadow_offset_x = 5
 Label/constants/shadow_offset_y = 5
 Label/constants/shadow_outline_size = 5
 Label/font_sizes/font_size = 100
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
+ProgressBar/colors/font_shadow_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 16
+ProgressBar/fonts/font = ExtResource("1_xcvla")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3ckt4")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qlsgi")

@@ -1,0 +1,424 @@
+[gd_scene load_steps=6 format=3 uid="uid://defvj1u7aq7dr"]
+
+[ext_resource type="Script" path="res://scripts/item_crafting.gd" id="1_t8t07"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_x2sv7"]
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="2_22u3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_080wq"]
+bg_color = Color(0.929412, 0.717647, 0.392157, 1)
+
+[sub_resource type="Theme" id="Theme_4nwlu"]
+
+[node name="item_crafting" type="CanvasLayer"]
+script = ExtResource("1_t8t07")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.988
+offset_right = 3.45593
+offset_bottom = 7.776
+color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[node name="WeightProgress" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.049
+anchor_right = 0.778
+anchor_bottom = 0.099
+offset_left = 0.255981
+offset_top = 0.247999
+offset_right = -0.256042
+offset_bottom = -0.152008
+theme = ExtResource("1_x2sv7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_080wq")
+show_percentage = false
+
+[node name="Weight" type="Label" parent="WeightProgress"]
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 75.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(0.945098, 0.619608, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.384314, 0, 0.309804)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 25
+text = "WEIGHT RATING: ---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.802
+anchor_right = 0.944
+anchor_bottom = 0.877
+offset_left = -0.256042
+offset_top = 0.303955
+offset_right = 0.511963
+offset_bottom = 0.703979
+theme = ExtResource("1_x2sv7")
+text = "CONTINUE"
+
+[node name="Weapons" type="ItemList" parent="."]
+self_modulate = Color(0.368627, 0.368627, 0.368627, 1)
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.235
+anchor_right = 0.764
+anchor_bottom = 0.519
+offset_left = -0.512001
+offset_top = 3.71999
+offset_right = -8.12805
+offset_bottom = -4.31204
+allow_rmb_select = true
+auto_height = true
+item_count = 5
+max_columns = 5
+fixed_column_width = 150
+fixed_icon_size = Vector2i(150, 150)
+item_0/text = ""
+item_0/icon = ExtResource("2_22u3s")
+item_1/text = ""
+item_1/icon = ExtResource("2_22u3s")
+item_2/text = ""
+item_2/icon = ExtResource("2_22u3s")
+item_3/text = ""
+item_3/icon = ExtResource("2_22u3s")
+item_4/text = ""
+item_4/icon = ExtResource("2_22u3s")
+
+[node name="Misc" type="ItemList" parent="."]
+self_modulate = Color(0.368627, 0.368627, 0.368627, 1)
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.247
+anchor_right = 0.944
+anchor_bottom = 0.407
+offset_left = -0.256042
+offset_top = -0.0559998
+offset_right = 0.511963
+offset_bottom = 0.264008
+allow_rmb_select = true
+auto_height = true
+item_count = 2
+max_columns = 2
+fixed_column_width = 80
+fixed_icon_size = Vector2i(80, 80)
+item_0/text = ""
+item_0/icon = ExtResource("2_22u3s")
+item_1/text = ""
+item_1/icon = ExtResource("2_22u3s")
+
+[node name="ResourceValues" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.132
+anchor_top = 0.691
+anchor_right = 0.528
+anchor_bottom = 0.815
+offset_left = -232.064
+offset_top = 104.232
+offset_right = -688.256
+offset_bottom = 23.8799
+scale = Vector2(2, 2)
+
+[node name="R1" type="TextureRect" parent="ResourceValues"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = -52.0
+offset_right = 156.0
+offset_bottom = -12.0
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ResourceValues/R1"]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_4nwlu")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R2" type="TextureRect" parent="ResourceValues"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = -52.0
+offset_right = 220.0
+offset_bottom = -12.0
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ResourceValues/R2"]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_4nwlu")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R3" type="TextureRect" parent="ResourceValues"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = -52.0
+offset_right = 284.0
+offset_bottom = -12.0
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ResourceValues/R3"]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_4nwlu")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R4" type="TextureRect" parent="ResourceValues"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = -52.0
+offset_right = 348.0
+offset_bottom = -12.0
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ResourceValues/R4"]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_4nwlu")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CraftableWeapons" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.494
+anchor_right = 0.743
+anchor_bottom = 0.506
+offset_left = -0.512001
+offset_top = -0.112
+offset_right = 0.0639648
+offset_bottom = 4.11197
+
+[node name="Crafting1" type="TextureRect" parent="CraftableWeapons"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting1"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 155.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Crafting2" type="TextureRect" parent="CraftableWeapons"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting2"]
+offset_top = 24.0
+offset_right = 155.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting2"]
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 156.0
+offset_bottom = 82.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost3" type="Label" parent="CraftableWeapons/Crafting2"]
+offset_left = 1.0
+offset_top = 82.0
+offset_right = 156.0
+offset_bottom = 111.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Crafting3" type="TextureRect" parent="CraftableWeapons"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting3"]
+offset_top = 24.0
+offset_right = 155.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting3"]
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 156.0
+offset_bottom = 82.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Crafting4" type="TextureRect" parent="CraftableWeapons"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting4"]
+offset_top = 24.0
+offset_right = 155.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Crafting5" type="TextureRect" parent="CraftableWeapons"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting5"]
+offset_top = 24.0
+offset_right = 155.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting5"]
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 156.0
+offset_bottom = 82.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost3" type="Label" parent="CraftableWeapons/Crafting5"]
+offset_left = 1.0
+offset_top = 82.0
+offset_right = 156.0
+offset_bottom = 111.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="Cost4" type="Label" parent="CraftableWeapons/Crafting5"]
+offset_top = 111.0
+offset_right = 155.0
+offset_bottom = 140.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "COST ---"
+
+[node name="CraftableMisc" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.785
+anchor_top = 0.383
+anchor_right = 0.924
+anchor_bottom = 0.389
+offset_left = -8.32001
+offset_top = -0.184006
+offset_right = 7.552
+offset_bottom = -0.0720215
+
+[node name="Crafting1" type="TextureRect" parent="CraftableMisc"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost3" type="Label" parent="CraftableMisc/Crafting1"]
+offset_top = 24.0
+offset_right = 86.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 15
+text = "COST ---"
+
+[node name="Crafting2" type="TextureRect" parent="CraftableMisc"]
+self_modulate = Color(0.694118, 0, 0, 0.784314)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_22u3s")
+expand_mode = 1
+
+[node name="Cost3" type="Label" parent="CraftableMisc/Crafting2"]
+offset_left = 6.0
+offset_top = 24.0
+offset_right = 86.0
+offset_bottom = 53.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 15
+text = "COST ---"
+
+[node name="Inventory" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.568
+anchor_right = 0.854
+anchor_bottom = 0.691
+offset_left = -0.256042
+offset_top = -0.0640259
+offset_right = -1.80804
+offset_bottom = -1.76804
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 15
+text = "HP ---
+Energy ---
+Weapon ---"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

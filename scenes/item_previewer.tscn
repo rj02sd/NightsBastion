@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://rbhtdn0k645g"]
+
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_dpchl"]
+[ext_resource type="Script" path="res://scripts/interface_scripts/item_previewer.gd" id="1_ur5hm"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="2_upu4h"]
+
+[node name="item_previewer" type="CanvasLayer"]
+script = ExtResource("1_ur5hm")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.988
+offset_right = 3.45593
+offset_bottom = 7.776
+color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[node name="Icon" type="TextureRect" parent="."]
+modulate = Color(0.341176, 0.341176, 0.341176, 1)
+anchors_preset = -1
+anchor_left = 0.139
+anchor_top = 0.245
+anchor_right = 0.444
+anchor_bottom = 0.789
+offset_left = -0.128021
+offset_top = 0.23999
+offset_right = 0.511963
+offset_bottom = -0.272034
+texture = ExtResource("1_dpchl")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.049
+anchor_right = 0.646
+anchor_bottom = 0.247
+offset_left = 0.575996
+offset_top = 0.247999
+offset_right = -0.192017
+offset_bottom = -1.056
+theme = ExtResource("2_upu4h")
+text = "ITEM NAME"
+
+[node name="Back" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.111
+anchor_top = 0.827
+anchor_right = 0.243
+anchor_bottom = 0.914
+offset_left = 0.127991
+offset_top = 0.104004
+offset_right = 0.0639954
+offset_bottom = -0.272034
+theme = ExtResource("2_upu4h")
+text = "BACK"
+
+[node name="Craft" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.827
+anchor_right = 0.424
+anchor_bottom = 0.914
+offset_left = -0.256042
+offset_top = 0.104004
+offset_right = -0.448029
+offset_bottom = -0.272034
+theme = ExtResource("2_upu4h")
+text = "CRAFT"
+
+[node name="Weight" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.667
+anchor_top = 0.111
+anchor_right = 0.944
+anchor_bottom = 0.185
+offset_left = -0.384033
+offset_top = 0.071991
+offset_right = 0.511963
+offset_bottom = 0.119995
+theme = ExtResource("2_upu4h")
+theme_override_colors/font_color = Color(1, 0.439216, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "WEIGHT: ---"
+
+[node name="Ability1" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.284
+anchor_right = 0.889
+anchor_bottom = 0.407
+offset_top = -0.0320129
+offset_right = -0.128052
+offset_bottom = 0.264008
+theme = ExtResource("2_upu4h")
+theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "ABILITY 1"
+
+[node name="Ability2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.407
+anchor_right = 0.889
+anchor_bottom = 0.519
+offset_top = 0.264008
+offset_right = -0.128052
+offset_bottom = -0.312042
+theme = ExtResource("2_upu4h")
+theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "ABILITY 2"
+
+[node name="Description" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.556
+anchor_right = 0.889
+anchor_bottom = 0.79
+offset_top = -0.288025
+offset_right = -0.128052
+offset_bottom = -0.920013
+theme = ExtResource("2_upu4h")
+theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "DESCRIPTION"

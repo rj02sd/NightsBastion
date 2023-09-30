@@ -1,14 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckn8tmgk7y8x7"]
+[gd_scene load_steps=2 format=3 uid="uid://ckn8tmgk7y8x7"]
 
-[ext_resource type="SpriteFrames" uid="uid://1dcxak4h00lm" path="res://art/spritesheets/prototype_sheet.tres" id="1_deb6s"]
-[ext_resource type="Script" path="res://scripts/prototype.gd" id="2_1dojb"]
+[ext_resource type="PackedScene" uid="uid://uwkqi14a8mk2" path="res://prefabs/prototype.tscn" id="1_7nyrq"]
 
 [node name="dev_scene" type="Node2D"]
 
-[node name="prototype" type="AnimatedSprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(576, 304)
-scale = Vector2(5, 5)
-sprite_frames = ExtResource("1_deb6s")
-script = ExtResource("2_1dojb")
+[node name="prototype" parent="." instance=ExtResource("1_7nyrq")]
