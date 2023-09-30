@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://di3vy3rawef35"]
+
+[ext_resource type="Script" path="res://scripts/interface_scripts/main_menu.gd" id="1_rx518"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_xmk75"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_rx518")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.151855
+color = Color(0, 0.564706, 0.439216, 1)
+
+[node name="Play" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.494
+anchor_right = 0.583
+anchor_bottom = 0.58
+offset_left = -2.62402
+offset_top = -0.112
+offset_right = 1.38397
+offset_bottom = 0.159973
+theme = ExtResource("1_xmk75")
+text = "PLAY"
+
+[node name="Tutorial" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.593
+anchor_right = 0.583
+anchor_bottom = 0.679
+offset_left = -2.62402
+offset_top = -0.264038
+offset_right = 1.38397
+offset_bottom = 0.00799561
+theme = ExtResource("1_xmk75")
+text = "TUTORIAL"
+
+[node name="Settings" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.691
+anchor_right = 0.583
+anchor_bottom = 0.778
+offset_left = -0.320038
+offset_top = 0.231964
+offset_right = 1.38397
+offset_bottom = -0.144043
+theme = ExtResource("1_xmk75")
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.79
+anchor_right = 0.583
+anchor_bottom = 0.877
+offset_left = -0.320038
+offset_top = 0.0799866
+offset_right = 1.38397
+offset_bottom = -0.296021
+theme = ExtResource("1_xmk75")
+text = "CREDITS"
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.182
+anchor_top = 0.151
+anchor_right = 0.839
+anchor_bottom = 0.347
+offset_left = 0.335983
+offset_top = 0.151993
+offset_right = 0.471924
+offset_bottom = 0.143997
+theme = ExtResource("1_xmk75")
+text = "UNTITLED GAME"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63yf5gralsii"]
+
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_yvkee"]
+
+[node name="settings" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.478431, 0.211765, 1, 1)
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.111
+anchor_right = 0.806
+anchor_bottom = 0.295
+offset_left = 0.511993
+offset_top = -7.92801
+offset_right = -0.512085
+offset_bottom = -0.160004
+theme = ExtResource("1_yvkee")
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.605
+anchor_right = 0.444
+anchor_bottom = 0.693
+offset_left = -0.256042
+offset_top = -0.0400085
+offset_right = 0.511963
+offset_bottom = -0.0640259
+theme = ExtResource("1_yvkee")
+text = "BACK"
+
+[node name="Next" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.605
+anchor_right = 0.722
+anchor_bottom = 0.691
+offset_left = -0.512085
+offset_top = -0.0400085
+offset_right = 0.25592
+offset_bottom = 1.23196
+theme = ExtResource("1_yvkee")
+disabled = true
+text = "NEXT"
