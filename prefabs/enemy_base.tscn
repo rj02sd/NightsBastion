@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://duyrdnwbg6tn7"]
+
+[ext_resource type="Script" path="res://scripts/enemy_base.gd" id="1_5xhjr"]
+[ext_resource type="Texture2D" uid="uid://e68dp1u2w6d1" path="res://art/game/border_square.png" id="1_uxlrg"]
+[ext_resource type="Texture2D" uid="uid://mnkrfy7h4gng" path="res://art/lights/18861-radial_gradient.png" id="2_ke58p"]
+
+[node name="enemy_base" type="PathFollow2D" groups=["Enemy"]]
+script = ExtResource("1_5xhjr")
+metadata/target = 0
+
+[node name="enemy" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_uxlrg")
+
+[node name="PointLight2D" type="PointLight2D" parent="enemy"]
+color = Color(1, 0.521569, 0.498039, 1)
+energy = 2.0
+texture = ExtResource("2_ke58p")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

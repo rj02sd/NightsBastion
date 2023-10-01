@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpc17w5wffs5b"]
+
+[ext_resource type="Script" path="res://scripts/interface_scripts/interface.gd" id="1_18731"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_x7kwp"]
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="2_tlg7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky006"]
+bg_color = Color(0.513726, 0.756863, 0.992157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ketg2"]
+bg_color = Color(0.807843, 0.439216, 0.803922, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.490196, 0, 0.337255, 1)
+
+[node name="interface" type="CanvasLayer"]
+script = ExtResource("1_18731")
+
+[node name="Weapon" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.864
+anchor_right = 0.069
+anchor_bottom = 0.963
+offset_left = -0.128
+offset_top = 0.127991
+offset_right = 0.511993
+offset_bottom = -0.0240479
+color = Color(0.0666667, 0.0235294, 0.235294, 1)
+
+[node name="Mana" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.957
+anchor_right = 0.306
+anchor_bottom = 0.963
+offset_left = 0.383995
+offset_top = -4.13599
+offset_right = -0.512024
+offset_bottom = -0.0240479
+theme = ExtResource("1_x7kwp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ky006")
+value = 90.0
+show_percentage = false
+
+[node name="Ability1" type="TextureButton" parent="."]
+modulate = Color(0.835294, 0.462745, 0.462745, 1)
+anchors_preset = -1
+anchor_left = 0.097
+anchor_top = 0.877
+anchor_right = 0.125
+anchor_bottom = 0.926
+offset_left = 0.255997
+offset_top = -0.296021
+offset_bottom = -0.0480347
+texture_normal = ExtResource("2_tlg7q")
+texture_pressed = ExtResource("2_tlg7q")
+texture_hover = ExtResource("2_tlg7q")
+texture_disabled = ExtResource("2_tlg7q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Ability2" type="TextureButton" parent="."]
+modulate = Color(0.996078, 0.560784, 0.552941, 1)
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.864
+anchor_right = 0.16
+anchor_bottom = 0.926
+offset_left = 8.0
+offset_top = 8.12799
+offset_right = -0.320007
+offset_bottom = -0.0480347
+texture_normal = ExtResource("2_tlg7q")
+texture_pressed = ExtResource("2_tlg7q")
+texture_hover = ExtResource("2_tlg7q")
+texture_disabled = ExtResource("2_tlg7q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HealthPotion" type="TextureButton" parent="."]
+modulate = Color(1, 0.231373, 0.266667, 1)
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.889
+anchor_right = 0.187
+anchor_bottom = 0.926
+offset_left = -0.384018
+offset_top = -0.0720215
+offset_right = 0.575989
+offset_bottom = -0.0480347
+texture_normal = ExtResource("2_tlg7q")
+texture_pressed = ExtResource("2_tlg7q")
+texture_hover = ExtResource("2_tlg7q")
+texture_disabled = ExtResource("2_tlg7q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ManaPotion" type="TextureButton" parent="."]
+modulate = Color(0.513726, 0.756863, 0.992157, 1)
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.889
+anchor_right = 0.215
+anchor_bottom = 0.926
+offset_left = 0.511993
+offset_top = -0.0720215
+offset_right = 0.319992
+offset_bottom = -0.0480347
+texture_normal = ExtResource("2_tlg7q")
+texture_pressed = ExtResource("2_tlg7q")
+texture_hover = ExtResource("2_tlg7q")
+texture_disabled = ExtResource("2_tlg7q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SkullIcon" type="TextureRect" parent="."]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+anchors_preset = -1
+anchor_left = 0.951
+anchor_top = 0.012
+anchor_right = 0.986
+anchor_bottom = 0.074
+offset_left = 0.447998
+offset_top = 0.224
+offset_right = 0.12793
+offset_bottom = 0.0480003
+texture = ExtResource("2_tlg7q")
+expand_mode = 1
+
+[node name="EnemiesDefeatedText" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.868
+anchor_right = 0.944
+anchor_bottom = 0.082
+offset_left = 0.0639648
+offset_right = 0.511963
+offset_bottom = -0.136002
+theme = ExtResource("1_x7kwp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "---"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ButtonOverlay" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.864
+anchor_right = 0.222
+anchor_bottom = 0.938
+offset_left = 0.319992
+offset_top = 0.127991
+offset_right = 0.255981
+offset_bottom = 0.175964
+color = Color(0, 0, 0, 0.305882)
+
+[node name="Overlay" type="ColorRect" parent="."]
+offset_left = 1112.0
+offset_top = 176.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="ControlProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 1112.0
+offset_top = 176.0
+offset_right = 1144.0
+offset_bottom = 648.0
+theme = ExtResource("1_x7kwp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ketg2")
+value = 80.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Control" type="Label" parent="."]
+offset_left = 1080.0
+offset_top = 518.0
+offset_right = 1112.0
+offset_bottom = 622.0
+theme = ExtResource("1_x7kwp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 20
+text = "C
+T
+R
+L
+"
+horizontal_alignment = 1

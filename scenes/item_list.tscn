@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://my8ief4pn3u0"]
+[gd_scene load_steps=6 format=3 uid="uid://my8ief4pn3u0"]
 
 [ext_resource type="Script" path="res://scripts/interface_scripts/item_list.gd" id="1_ktlsk"]
-[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_rn02g"]
+[ext_resource type="PackedScene" uid="uid://crdfpb0i3lfvc" path="res://scenes/scene_components/weapons.tscn" id="2_dbl7c"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="2_jwww6"]
-
-[sub_resource type="Theme" id="Theme_xe051"]
+[ext_resource type="PackedScene" uid="uid://dd6qjh0ohldls" path="res://scenes/scene_components/misc.tscn" id="3_moea6"]
+[ext_resource type="PackedScene" uid="uid://cl7e1cuf1xe5w" path="res://scenes/scene_components/Resources.tscn" id="4_oacwb"]
 
 [node name="item_list" type="CanvasLayer"]
 script = ExtResource("1_ktlsk")
@@ -17,354 +17,41 @@ offset_right = 3.45593
 offset_bottom = 7.776
 color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
-[node name="Weapons" type="ItemList" parent="."]
-self_modulate = Color(0.368627, 0.368627, 0.368627, 1)
+[node name="Title" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.111
-anchor_right = 0.764
-anchor_bottom = 0.383
-offset_left = -0.511986
-offset_top = 0.071991
-offset_right = -8.12805
-offset_bottom = -0.184006
-allow_rmb_select = true
-auto_height = true
-item_count = 5
-max_columns = 5
-fixed_column_width = 150
-fixed_icon_size = Vector2i(150, 150)
-item_0/text = ""
-item_0/icon = ExtResource("1_rn02g")
-item_0/selectable = false
-item_1/text = ""
-item_1/icon = ExtResource("1_rn02g")
-item_1/selectable = false
-item_2/text = ""
-item_2/icon = ExtResource("1_rn02g")
-item_2/selectable = false
-item_3/text = ""
-item_3/icon = ExtResource("1_rn02g")
-item_3/selectable = false
-item_4/text = ""
-item_4/icon = ExtResource("1_rn02g")
-item_4/selectable = false
-
-[node name="Misc" type="ItemList" parent="."]
-self_modulate = Color(0.368627, 0.368627, 0.368627, 1)
-anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.123
-anchor_right = 0.944
-anchor_bottom = 0.278
-offset_left = -0.256042
-offset_top = -3.704
-offset_right = 0.511963
-offset_bottom = -0.144012
-allow_rmb_select = true
-auto_height = true
-item_count = 2
-max_columns = 2
-fixed_column_width = 80
-fixed_icon_size = Vector2i(80, 80)
-item_0/text = ""
-item_0/icon = ExtResource("1_rn02g")
-item_0/selectable = false
-item_1/text = ""
-item_1/icon = ExtResource("1_rn02g")
-item_1/selectable = false
-
-[node name="ResourceValues" type="Control" parent="."]
-layout_mode = 3
-anchor_left = 0.132
-anchor_top = 0.568
-anchor_right = 0.535
-anchor_bottom = 0.685
-offset_left = -232.064
-offset_top = 99.936
-offset_right = -696.32
-offset_bottom = 24.12
-scale = Vector2(2, 2)
-
-[node name="R1" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 116.0
-offset_top = -52.0
-offset_right = 156.0
-offset_bottom = -12.0
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R1"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_xe051")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R2" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 180.0
-offset_top = -52.0
-offset_right = 220.0
-offset_bottom = -12.0
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R2"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_xe051")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R3" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 244.0
-offset_top = -52.0
-offset_right = 284.0
-offset_bottom = -12.0
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R3"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_xe051")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R4" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 308.0
-offset_top = -52.0
-offset_right = 348.0
-offset_bottom = -12.0
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R4"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_xe051")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CraftableWeapons" type="HBoxContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.333
-anchor_right = 0.742
-anchor_bottom = 0.37
-offset_left = -0.512001
-offset_top = 0.216003
-offset_right = 1.21594
-offset_bottom = 0.23999
-
-[node name="Crafting1" type="TextureRect" parent="CraftableWeapons"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting1"]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
+anchor_left = 0.139
+anchor_top = 0.012
+anchor_right = 0.861
+anchor_bottom = 0.21
+offset_left = -0.128021
+offset_top = 0.224
+offset_right = -3.87207
+offset_bottom = -1.08
 theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
+text = "CRAFTABLE ITEMS"
 
-[node name="Crafting2" type="TextureRect" parent="CraftableWeapons"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
+[node name="Weapons" parent="." instance=ExtResource("2_dbl7c")]
+anchor_top = 0.235
+anchor_bottom = 0.642
+offset_top = -0.280014
+offset_bottom = -0.0160217
 
-[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting2"]
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
+[node name="Misc" parent="." instance=ExtResource("3_moea6")]
+anchor_top = 0.235
+offset_top = -0.280014
+offset_right = 0.191895
+offset_bottom = -6.09604
 
-[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting2"]
-offset_left = 1.0
-offset_top = 53.0
-offset_right = 156.0
-offset_bottom = 82.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Cost3" type="Label" parent="CraftableWeapons/Crafting2"]
-offset_left = 1.0
-offset_top = 82.0
-offset_right = 156.0
-offset_bottom = 111.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Crafting3" type="TextureRect" parent="CraftableWeapons"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting3"]
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting3"]
-offset_left = 1.0
-offset_top = 53.0
-offset_right = 156.0
-offset_bottom = 82.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Crafting4" type="TextureRect" parent="CraftableWeapons"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting4"]
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Crafting5" type="TextureRect" parent="CraftableWeapons"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost1" type="Label" parent="CraftableWeapons/Crafting5"]
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Cost2" type="Label" parent="CraftableWeapons/Crafting5"]
-offset_left = 1.0
-offset_top = 53.0
-offset_right = 156.0
-offset_bottom = 82.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Cost3" type="Label" parent="CraftableWeapons/Crafting5"]
-offset_left = 1.0
-offset_top = 82.0
-offset_right = 156.0
-offset_bottom = 111.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Cost4" type="Label" parent="CraftableWeapons/Crafting5"]
-offset_top = 111.0
-offset_right = 155.0
-offset_bottom = 140.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="CraftableMisc" type="HBoxContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.222
-anchor_right = 0.931
-anchor_bottom = 0.247
-offset_left = -0.256042
-offset_top = 0.143982
-offset_right = -0.512085
-offset_bottom = -0.0559998
-
-[node name="Crafting1" type="TextureRect" parent="CraftableMisc"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost3" type="Label" parent="CraftableMisc/Crafting1"]
-offset_top = 24.0
-offset_right = 155.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
-
-[node name="Crafting2" type="TextureRect" parent="CraftableMisc"]
-self_modulate = Color(0.694118, 0, 0, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_rn02g")
-expand_mode = 1
-
-[node name="Cost3" type="Label" parent="CraftableMisc/Crafting2"]
-offset_left = 6.0
-offset_top = 24.0
-offset_right = 161.0
-offset_bottom = 53.0
-theme = ExtResource("2_jwww6")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 20
-text = "COST ---"
+[node name="Resources" parent="." instance=ExtResource("4_oacwb")]
+anchor_left = 0.111
+anchor_top = 0.691
+anchor_right = 0.615
+anchor_bottom = 0.852
+offset_left = 0.128006
+offset_top = 0.231964
+offset_right = -348.48
+offset_bottom = -64.096
+scale = Vector2(2.5, 2.5)
 
 [node name="Back" type="Button" parent="."]
 anchors_preset = -1

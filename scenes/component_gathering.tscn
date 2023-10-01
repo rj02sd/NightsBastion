@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8upgdsvq3vqq"]
+[gd_scene load_steps=9 format=3 uid="uid://b8upgdsvq3vqq"]
 
 [ext_resource type="Script" path="res://scripts/component_gathering.gd" id="1_nuo2g"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_uek34"]
-[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="2_jp6o1"]
+[ext_resource type="PackedScene" uid="uid://fy6kf443oqfk" path="res://scenes/scene_components/Actions.tscn" id="3_d54gi"]
+[ext_resource type="PackedScene" uid="uid://cl7e1cuf1xe5w" path="res://scenes/scene_components/Resources.tscn" id="4_0muhp"]
 [ext_resource type="PackedScene" uid="uid://my8ief4pn3u0" path="res://scenes/item_list.tscn" id="4_xkfhr"]
+[ext_resource type="PackedScene" uid="uid://rl1wlgdywfpx" path="res://scenes/scene_components/ResourceRemover.tscn" id="5_wrxn5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdf8s"]
 bg_color = Color(0.6, 0.937255, 0.960784, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tgud"]
 bg_color = Color(0.929412, 0.717647, 0.392157, 1)
-
-[sub_resource type="Theme" id="Theme_biajp"]
 
 [node name="component_gathering" type="CanvasLayer"]
 script = ExtResource("1_nuo2g")
@@ -20,8 +20,7 @@ script = ExtResource("1_nuo2g")
 anchors_preset = -1
 anchor_right = 0.997
 anchor_bottom = 0.988
-offset_left = 8.0
-offset_right = 11.4559
+offset_right = 11.4561
 offset_bottom = 7.776
 color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
@@ -39,6 +38,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_bdf8s")
 show_percentage = false
 
 [node name="Energy" type="Label" parent="EnergyProgress"]
+layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
 offset_bottom = 75.0
@@ -86,6 +86,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_7tgud")
 show_percentage = false
 
 [node name="Weight" type="Label" parent="WeightProgress"]
+layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
 offset_bottom = 75.0
@@ -98,245 +99,64 @@ theme_override_font_sizes/font_size = 25
 text = "WEIGHT: ---"
 vertical_alignment = 1
 
-[node name="Action1" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_left = 0.111
-anchor_top = 0.346
-anchor_right = 0.278
-anchor_bottom = 0.889
-offset_left = 0.127991
-offset_top = -0.208008
-offset_right = -0.256042
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
+[node name="Actions" parent="." instance=ExtResource("3_d54gi")]
+visible = false
 
-[node name="Icon" type="ColorRect" parent="Action1"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action1"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
-theme = ExtResource("1_uek34")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
-text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
-
-[node name="Action2" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_left = 0.333
-anchor_top = 0.346
-anchor_right = 0.5
-anchor_bottom = 0.889
-offset_left = 0.384003
-offset_top = -0.208008
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
-
-[node name="Icon" type="ColorRect" parent="Action2"]
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action2"]
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
-theme = ExtResource("1_uek34")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
-text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
-
-[node name="Action3" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_left = 0.556
-anchor_top = 0.346
-anchor_right = 0.722
-anchor_bottom = 0.889
-offset_left = -0.512085
-offset_top = -0.208008
-offset_right = 0.25592
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
-
-[node name="Icon" type="ColorRect" parent="Action3"]
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action3"]
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
-theme = ExtResource("1_uek34")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
-text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
-
-[node name="ResourceValues" type="Control" parent="."]
-layout_mode = 3
+[node name="Resources" parent="." instance=ExtResource("4_0muhp")]
 anchor_left = 0.396
 anchor_top = 0.111
 anchor_right = 0.597
 anchor_bottom = 0.173
-offset_left = -136.192
-offset_top = 56.072
-offset_right = -367.744
-offset_bottom = 15.896
-
-[node name="R1" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = -56.0
-offset_right = 176.0
-offset_bottom = -16.0
-texture = ExtResource("2_jp6o1")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R1"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_biajp")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R2" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 200.0
-offset_top = -56.0
-offset_right = 240.0
-offset_bottom = -16.0
-texture = ExtResource("2_jp6o1")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R2"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_biajp")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R3" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = -56.0
-offset_right = 304.0
-offset_bottom = -16.0
-texture = ExtResource("2_jp6o1")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R3"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_biajp")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="R4" type="TextureRect" parent="ResourceValues"]
-layout_mode = 0
-offset_left = 328.0
-offset_top = -56.0
-offset_right = 368.0
-offset_bottom = -16.0
-texture = ExtResource("2_jp6o1")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="ResourceValues/R4"]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 80.0
-theme = SubResource("Theme_biajp")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = -48.192
+offset_top = 0.071991
+offset_right = -48.192
+offset_bottom = 0.071991
 
 [node name="ItemList" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.296
-anchor_right = 0.944
-anchor_bottom = 0.395
-offset_left = -0.256042
-offset_top = 0.192001
-offset_right = 0.511963
-offset_bottom = 0.0399933
+anchor_left = 0.576
+anchor_top = 0.111
+anchor_right = 0.646
+anchor_bottom = 0.173
+offset_left = 0.447937
+offset_top = 0.071991
+offset_right = -0.192017
+offset_bottom = -0.104004
 theme = ExtResource("1_uek34")
-text = "ITEM LIST"
+theme_override_font_sizes/font_size = 20
+text = "ITEMS"
 
 [node name="Continue" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.741
-anchor_right = 0.944
-anchor_bottom = 0.84
-offset_left = -0.256042
-offset_top = -0.16803
-offset_right = 0.511963
-offset_bottom = -0.320007
+anchor_left = 0.389
+anchor_top = 0.593
+anchor_right = 0.611
+anchor_bottom = 0.691
+offset_left = -0.128021
+offset_top = -0.264038
+offset_right = 0.127991
+offset_bottom = 0.231964
 theme = ExtResource("1_uek34")
 text = "CONTINUE"
 
-[node name="Reroll" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.494
-anchor_right = 0.951
-anchor_bottom = 0.605
-offset_left = -0.256042
-offset_top = -0.112
-offset_right = -7.552
-offset_bottom = -7.04001
-theme = ExtResource("1_uek34")
-text = "REROLL"
-
-[node name="Cost" type="Label" parent="Reroll"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.108
-anchor_right = 1.0
-anchor_bottom = 1.6
-offset_top = -0.0200043
-theme = ExtResource("1_uek34")
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.635294, 1, 0.278431)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 20
-text = "--- ENERGY"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ResourceRemover" parent="." instance=ExtResource("5_wrxn5")]
+visible = false
+offset_left = 208.0
+offset_top = 200.0
+offset_right = 208.512
+offset_bottom = 199.696
 
 [node name="item_list" parent="." instance=ExtResource("4_xkfhr")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 192.0
+offset_right = 1070.0
+offset_bottom = 319.0
+theme = ExtResource("1_uek34")
+text = "NIGHT APPROACHES"
 
 [connection signal="pressed" from="ItemList" to="." method="_on_item_list_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

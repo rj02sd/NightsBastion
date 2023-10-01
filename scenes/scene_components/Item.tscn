@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=3 uid="uid://cohg02xyjmrce"]
+
+[ext_resource type="Script" path="res://scripts/Item.gd" id="1_jmsth"]
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_kwcec"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="2_lfw8u"]
+
+[node name="Item" type="Control"]
+layout_mode = 3
+offset_right = 128.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jmsth")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.485
+offset_bottom = -0.0400085
+texture = ExtResource("1_kwcec")
+expand_mode = 1
+
+[node name="ResourceIcons" type="VBoxContainer" parent="Icon"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 72.0
+offset_top = 152.0
+offset_right = 97.0
+offset_bottom = 252.0
+
+[node name="TextureRect" type="TextureRect" parent="Icon/ResourceIcons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_kwcec")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Icon/ResourceIcons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_kwcec")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Icon/ResourceIcons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_kwcec")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Icon/ResourceIcons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_kwcec")
+expand_mode = 1
+
+[node name="ResourceNums" type="VBoxContainer" parent="Icon"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 57.0
+offset_bottom = 252.0
+
+[node name="Label" type="Label" parent="Icon/ResourceNums"]
+layout_mode = 2
+theme = ExtResource("2_lfw8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.376471, 0.376471, 0.376471, 0)
+theme_override_font_sizes/font_size = 14
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Icon/ResourceNums"]
+layout_mode = 2
+theme = ExtResource("2_lfw8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.376471, 0.376471, 0.376471, 0)
+theme_override_font_sizes/font_size = 14
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Icon/ResourceNums"]
+layout_mode = 2
+theme = ExtResource("2_lfw8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.376471, 0.376471, 0.376471, 0)
+theme_override_font_sizes/font_size = 14
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Icon/ResourceNums"]
+layout_mode = 2
+theme = ExtResource("2_lfw8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.376471, 0.376471, 0.376471, 0)
+theme_override_font_sizes/font_size = 14
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IsValid" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.485
+anchor_right = 1.0
+anchor_bottom = 0.547
+offset_top = -0.0400085
+offset_bottom = 0.0239868
+color = Color(1, 0, 0.231373, 1)
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.364706)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97
+offset_bottom = -0.0800171
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

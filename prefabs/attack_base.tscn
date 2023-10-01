@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdj26wc6v11bo"]
+
+[ext_resource type="Script" path="res://scripts/attack_base.gd" id="1_sjj7m"]
+
+[node name="attack_base" type="RigidBody2D" groups=["Attack"]]
+scale = Vector2(1e-05, 1e-05)
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_sjj7m")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-16, 0)
+polygon = PackedVector2Array(16, 0, 8, -32, 0, -64, 24, -32, 32, 0, 24, 32, 0, 64, 8.51697, 29.9321)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -16, -64, 8, -32, 16, 0, 8, 32, -16, 64)

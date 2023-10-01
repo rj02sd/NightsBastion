@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctc1xb4hol1ex"]
+
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_ncpfw"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="2_hyg3v"]
+[ext_resource type="PackedScene" uid="uid://de8wwf8e1rglj" path="res://prefabs/lantern_pathway.tscn" id="3_oby2h"]
+
+[node name="lvl_dev" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.0352941, 0, 0.156863, 1)
+position = Vector2(576, 320)
+scale = Vector2(2.25, 1.28125)
+texture = ExtResource("1_ncpfw")
+
+[node name="level" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 401.0
+offset_bottom = 135.0
+theme = ExtResource("2_hyg3v")
+text = "LEVEL DEV"
+
+[node name="LanternPathway3" parent="." instance=ExtResource("3_oby2h")]
+position = Vector2(1120, 352)
+
+[node name="left_path" type="Polygon2D" parent="LanternPathway3"]
+position = Vector2(0, 40)
+color = Color(1, 0, 0.34902, 0.231373)
+polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
+
+[node name="right_path" type="Polygon2D" parent="LanternPathway3"]
+position = Vector2(120, 40)
+color = Color(1, 0, 0.34902, 0.231373)
+polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.690196, 0.690196, 0.690196, 1)
+blend_mode = 2

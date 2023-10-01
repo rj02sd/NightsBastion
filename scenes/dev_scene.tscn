@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckn8tmgk7y8x7"]
-
-[ext_resource type="PackedScene" uid="uid://uwkqi14a8mk2" path="res://prefabs/prototype.tscn" id="1_7nyrq"]
-
-[node name="dev_scene" type="Node2D"]
-
-[node name="prototype" parent="." instance=ExtResource("1_7nyrq")]

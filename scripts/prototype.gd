@@ -5,5 +5,5 @@ func _ready():
 	play("default")
 
 
-func _process(delta):
+func _process(_delta):
 	pass

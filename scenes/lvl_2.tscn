@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://broe4rw6lw5lh"]
+
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_xnm8h"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="2_em4q2"]
+
+[node name="lvl_2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.0352941, 0, 0.156863, 1)
+position = Vector2(576, 320)
+scale = Vector2(2.25, 1.28125)
+texture = ExtResource("1_xnm8h")
+
+[node name="level" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 401.0
+offset_bottom = 135.0
+theme = ExtResource("2_em4q2")
+text = "LEVEL 2"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

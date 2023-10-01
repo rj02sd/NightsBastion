@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl7e1cuf1xe5w"]
+
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_5febi"]
+
+[sub_resource type="Theme" id="Theme_38wq4"]
+
+[node name="Resources" type="Control"]
+layout_mode = 3
+anchor_right = 0.201
+anchor_bottom = 0.062
+offset_right = 0.447998
+offset_bottom = -0.176003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="R1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5febi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="R1"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_38wq4")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 104.0
+offset_bottom = 40.0
+texture = ExtResource("1_5febi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="R2"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_38wq4")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 168.0
+offset_bottom = 40.0
+texture = ExtResource("1_5febi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="R3"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_38wq4")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 232.0
+offset_bottom = 40.0
+texture = ExtResource("1_5febi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="R4"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+theme = SubResource("Theme_38wq4")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1

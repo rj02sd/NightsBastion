@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6qjh0ohldls"]
+
+[ext_resource type="PackedScene" uid="uid://cohg02xyjmrce" path="res://scenes/scene_components/Item.tscn" id="1_0joqn"]
+
+[node name="Misc" type="GridContainer"]
+anchors_preset = -1
+anchor_left = 0.632
+anchor_top = 0.247
+anchor_right = 0.854
+anchor_bottom = 0.602
+offset_left = -0.0640259
+offset_top = -0.0559998
+offset_right = 0.191956
+offset_bottom = 1.90396
+columns = 2
+
+[node name="Item" parent="." instance=ExtResource("1_0joqn")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item2" parent="." instance=ExtResource("1_0joqn")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

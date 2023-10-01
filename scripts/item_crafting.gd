@@ -5,9 +5,9 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/lvl_dev.tscn")

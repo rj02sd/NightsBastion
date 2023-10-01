@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://de8wwf8e1rglj"]
+
+[ext_resource type="Script" path="res://scripts/lantern_pathway.gd" id="1_a0yq1"]
+[ext_resource type="Texture2D" uid="uid://e68dp1u2w6d1" path="res://art/game/border_square.png" id="1_f2jlx"]
+[ext_resource type="Texture2D" uid="uid://mnkrfy7h4gng" path="res://art/lights/18861-radial_gradient.png" id="2_spgfb"]
+[ext_resource type="Texture2D" uid="uid://cdgxvtnfv4bsc" path="res://art/lights/new_light_ray.png" id="3_f5mdt"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="5_rod1e"]
+
+[sub_resource type="Curve2D" id="Curve2D_hqlhh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -448, -448, 0, 0, 0, 0, -448, 96)
+}
+point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f7np"]
+bg_color = Color(1, 0.52549, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4esst"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac8e1"]
+bg_color = Color(1, 0.254902, 0.282353, 1)
+
+[node name="LanternPathway" type="Path2D" groups=["Lantern"]]
+position = Vector2(128, 0)
+curve = SubResource("Curve2D_hqlhh")
+script = ExtResource("1_a0yq1")
+metadata/lantern_num = 0
+
+[node name="HealthTween" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -480.0
+offset_top = 168.0
+offset_right = -416.0
+offset_bottom = 176.0
+theme = ExtResource("5_rod1e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3f7np")
+value = 90.0
+show_percentage = false
+
+[node name="Health" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -480.0
+offset_top = 168.0
+offset_right = -416.0
+offset_bottom = 176.0
+theme = ExtResource("5_rod1e")
+theme_override_styles/background = SubResource("StyleBoxFlat_4esst")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ac8e1")
+value = 70.0
+show_percentage = false
+
+[node name="Lantern" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.776471, 0.0588235, 1)
+position = Vector2(-448, 130)
+texture = ExtResource("1_f2jlx")
+
+[node name="Light1" type="PointLight2D" parent="Lantern"]
+unique_name_in_owner = true
+position = Vector2(-4, -5.99994)
+color = Color(1, 1, 0.301961, 1)
+range_item_cull_mask = 3
+texture = ExtResource("2_spgfb")
+
+[node name="Light2" type="PointLight2D" parent="Lantern"]
+unique_name_in_owner = true
+position = Vector2(-4, -342)
+rotation = 3.14159
+color = Color(1, 1, 0.196078, 1)
+energy = 10.0
+range_item_cull_mask = 3
+texture = ExtResource("3_f5mdt")
+
+[node name="Darken" type="PointLight2D" parent="Lantern"]
+unique_name_in_owner = true
+position = Vector2(0, -162)
+scale = Vector2(0.421053, 1.09474)
+energy = 0.0
+blend_mode = 1
+texture = ExtResource("3_f5mdt")

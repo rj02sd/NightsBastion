@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpefbkw16ism5"]
+
+[ext_resource type="Script" path="res://scripts/alternate_pathway.gd" id="1_uioy1"]
+
+[sub_resource type="Curve2D" id="Curve2D_hqlhh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -400, -440, 0, 0, 0, 0, -435.534, -21.1216, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[node name="AlternatePathway" type="Path2D" groups=["AlternatePath"]]
+position = Vector2(128, 0)
+curve = SubResource("Curve2D_hqlhh")
+script = ExtResource("1_uioy1")
+metadata/belongs_to = 0
