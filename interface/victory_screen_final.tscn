@@ -32,11 +32,46 @@ anchor_left = 0.556
 anchor_top = 0.605
 anchor_right = 0.722
 anchor_bottom = 0.691
-offset_left = -160.512
-offset_top = -0.0400085
-offset_right = -159.744
-offset_bottom = 1.23196
+offset_left = -208.512
+offset_top = 103.96
+offset_right = -119.744
+offset_bottom = 105.232
 theme = ExtResource("2_xd7f4")
-text = "CONTINUE"
+text = "CREDITS|MSG"
+
+[node name="Congrats" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 224.0
+offset_right = 890.0
+offset_bottom = 290.0
+theme = ExtResource("2_xd7f4")
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 50
+text = "CONGRATS ON WINNING!"
+
+[node name="Difficulty" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 264.0
+offset_top = 312.0
+offset_right = 890.0
+offset_bottom = 378.0
+theme = ExtResource("2_xd7f4")
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 50
+text = "BEAT ON DIFFICULTY: X.X"
+
+[node name="Enemies_Defeated" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 264.0
+offset_top = 368.0
+offset_right = 890.0
+offset_bottom = 434.0
+theme = ExtResource("2_xd7f4")
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 50
+text = "ENEMIES DEFEATED: XXX"
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

@@ -9,9 +9,11 @@ func _process(_delta):
 	if PlayerData.weapon_crafted == false:
 		%Continue.disabled = true
 		%Misc.visible = false
+		%Weapons.visible = true
 	else:
 		%Continue.disabled = false
 		%Misc.visible = true
+		%Weapons.visible = false
 	%Inventory.text = ("HP Potions: "+str(PlayerData.health_potions)+
 	"\nMana Potions: "+str(PlayerData.mana_potions)+"\nWeapon Bought: "+str(PlayerData.weapon_crafted))
 	%WeightProgress.max_value = PlayerData.combat_max_weight

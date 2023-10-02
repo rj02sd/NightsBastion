@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctc1xb4hol1ex"]
+[gd_scene load_steps=11 format=3 uid="uid://ctc1xb4hol1ex"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_2fctm"]
 [ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_ncpfw"]
@@ -6,12 +6,25 @@
 [ext_resource type="PackedScene" uid="uid://cpefbkw16ism5" path="res://prefabs/alternate_pathway.tscn" id="3_ap22e"]
 [ext_resource type="PackedScene" uid="uid://de8wwf8e1rglj" path="res://prefabs/lantern_pathway.tscn" id="3_oby2h"]
 [ext_resource type="PackedScene" uid="uid://dpc17w5wffs5b" path="res://interface/interface.tscn" id="5_avjl1"]
+[ext_resource type="AudioStream" uid="uid://bweb858we2kh5" path="res://music/Flux.mp3" id="7_s4xnr"]
+
+[sub_resource type="Curve2D" id="Curve2D_eney0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -456, -408, 0, 0, 0, 0, -440, -176, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_onxnd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -528, -400, 0, 0, 0, 0, -528, -208, 0, 0, 0, 0, -538.307, -113.752, 0, 0, 0, 0, -542, -93, 0, 0, 0, 0, -568, 96)
+}
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_ekidp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -456, -440, 0, 0, 0, 0, -400, 96)
+"points": PackedVector2Array(0, 0, 0, 0, -440, -432, 0, 0, 0, 0, -432, -120, 0, 0, 0, 0, -400, 96)
 }
-point_count = 2
+point_count = 3
 
 [node name="lvl_dev" type="Node2D"]
 script = ExtResource("1_2fctm")
@@ -32,10 +45,11 @@ offset_top = 8.0
 offset_right = 401.0
 offset_bottom = 135.0
 theme = ExtResource("2_hyg3v")
-text = "LEVEL DEV"
+text = "LEVEL 0"
 
 [node name="LanternPathway" parent="." instance=ExtResource("3_oby2h")]
 position = Vector2(1120, 352)
+curve = SubResource("Curve2D_eney0")
 spawn_rate = 0.7
 
 [node name="left_path" type="Polygon2D" parent="LanternPathway"]
@@ -49,7 +63,8 @@ color = Color(1, 0, 0.34902, 0.231373)
 polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
 
 [node name="AlternatePathwayL" parent="LanternPathway" instance=ExtResource("3_ap22e")]
-position = Vector2(0, 0)
+position = Vector2(120, 0)
+curve = SubResource("Curve2D_onxnd")
 spawn_rate = 0.3
 
 [node name="AlternatePathwayR" parent="LanternPathway" instance=ExtResource("3_ap22e")]
@@ -62,3 +77,11 @@ color = Color(0.690196, 0.690196, 0.690196, 1)
 blend_mode = 2
 
 [node name="interface" parent="." instance=ExtResource("5_avjl1")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1240, 96)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_s4xnr")
+volume_db = -20.0
+autoplay = true

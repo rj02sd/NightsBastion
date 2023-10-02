@@ -73,7 +73,6 @@ func _change_phase():
 	match phase:
 		0:
 			%Info.visible = true
-			%Skip.visible = true
 			%StartGathering.visible = true
 			%Actions.visible = false
 			%NightApproaches.visible = false
@@ -81,7 +80,6 @@ func _change_phase():
 			%ResourceRemover.visible = false
 		1:
 			%Info.visible = false
-			%Skip.visible = false
 			%StartGathering.visible = false
 			%Actions.visible = true
 			%NightApproaches.visible = false

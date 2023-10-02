@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bla1ak6s8c30a"]
+[gd_scene load_steps=16 format=3 uid="uid://bla1ak6s8c30a"]
 
 [ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_lpmgd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_u2fj2"]
@@ -6,12 +6,55 @@
 [ext_resource type="PackedScene" uid="uid://de8wwf8e1rglj" path="res://prefabs/lantern_pathway.tscn" id="3_3bw8e"]
 [ext_resource type="PackedScene" uid="uid://dpc17w5wffs5b" path="res://interface/interface.tscn" id="4_wodvb"]
 [ext_resource type="PackedScene" uid="uid://cpefbkw16ism5" path="res://prefabs/alternate_pathway.tscn" id="5_cgq41"]
+[ext_resource type="AudioStream" uid="uid://bweb858we2kh5" path="res://music/Flux.mp3" id="7_iwft7"]
+
+[sub_resource type="Curve2D" id="Curve2D_8ghjb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -464, -400, 0, 0, 0, 0, -440, -216, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_3l583"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -536, -368, 0, 0, 0, 0, -528, -208, 0, 0, 0, 0, -568, 96)
+}
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_osa27"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -456, -440, 0, 0, 0, 0, -400, 96)
 }
 point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8dmlu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -464, -256, 0, 0, 0, 0, -456, -136, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_bonyt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -536, -256, 0, 0, 0, 0, -552, -112, 0, 0, 0, 0, -568, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_d0bk1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -392, 488, 0, 0, 0, 0, -408, 184)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_rc134"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -440, -400, 0, 0, 0, 0, -448, -200, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_7857x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -496.043, -421.018, 0, 0, 0, 0, -528, -208, 0, 0, 0, 0, -538.307, -113.752, 0, 0, 0, 0, -568, 96)
+}
+point_count = 4
 
 [node name="lvl_1" type="Node2D"]
 script = ExtResource("1_u2fj2")
@@ -36,8 +79,10 @@ theme = ExtResource("2_5oihb")
 text = "LEVEL 1"
 
 [node name="LanternPathway2" parent="." instance=ExtResource("3_3bw8e")]
-position = Vector2(704, 352)
-spawn_rate = 1.2
+position = Vector2(520, 80)
+rotation = -0.785398
+curve = SubResource("Curve2D_8ghjb")
+spawn_rate = 10.0
 
 [node name="left_path" type="Polygon2D" parent="LanternPathway2"]
 position = Vector2(0, 40)
@@ -50,43 +95,54 @@ color = Color(1, 0, 0.34902, 0.231373)
 polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
 
 [node name="AlternatePathwayL" parent="LanternPathway2" instance=ExtResource("5_cgq41")]
-position = Vector2(0, 0)
-spawn_rate = 0.75
+position = Vector2(347.201, -0.275848)
+scale = Vector2(1.4, 1.08621)
+curve = SubResource("Curve2D_3l583")
+max_health = 300
+spawn_rate = 10.5
 
 [node name="AlternatePathwayR" parent="LanternPathway2" instance=ExtResource("5_cgq41")]
 position = Vector2(-48, 0)
 curve = SubResource("Curve2D_osa27")
-spawn_rate = 0.75
+max_health = 300
+spawn_rate = 9.5
 
 [node name="LanternPathway3" parent="." instance=ExtResource("3_3bw8e")]
-position = Vector2(1024, 344)
-spawn_rate = 1.7
+position = Vector2(1024, 200)
+curve = SubResource("Curve2D_8dmlu")
+max_health = 500
+spawn_rate = 0.4
 metadata/lantern_num = 1
 
 [node name="left_path" type="Polygon2D" parent="LanternPathway3"]
-position = Vector2(0, 40)
+position = Vector2(0, 192)
 color = Color(1, 0, 0.34902, 0.231373)
-polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
+polygon = PackedVector2Array(-512, 256, -512, 66, -512, -400, -504, -400, -504, 256)
 
 [node name="right_path" type="Polygon2D" parent="LanternPathway3"]
-position = Vector2(120, 40)
+position = Vector2(120, 192)
 color = Color(1, 0, 0.34902, 0.231373)
-polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
+polygon = PackedVector2Array(-512, 256, -512, -400, -504, -400, -504, 256)
 
 [node name="AlternatePathwayL" parent="LanternPathway3" instance=ExtResource("5_cgq41")]
-position = Vector2(0, 0)
-spawn_rate = 0.75
+position = Vector2(120, 0)
+curve = SubResource("Curve2D_bonyt")
+max_health = 300
+spawn_rate = 0.45
 metadata/belongs_to = 1
 
 [node name="AlternatePathwayR" parent="LanternPathway3" instance=ExtResource("5_cgq41")]
 position = Vector2(-48, 0)
-curve = SubResource("Curve2D_osa27")
-spawn_rate = 0.75
+curve = SubResource("Curve2D_d0bk1")
+max_health = 300
+spawn_rate = 1.0
 metadata/belongs_to = 1
 
 [node name="LanternPathway4" parent="." instance=ExtResource("3_3bw8e")]
-position = Vector2(1344, 352)
-spawn_rate = 1.1
+position = Vector2(1304, 472)
+rotation = 0.349066
+curve = SubResource("Curve2D_rc134")
+spawn_rate = 10.0
 metadata/lantern_num = 2
 
 [node name="left_path" type="Polygon2D" parent="LanternPathway4"]
@@ -100,14 +156,17 @@ color = Color(1, 0, 0.34902, 0.231373)
 polygon = PackedVector2Array(-512, 64, -512, -400, -504, -400, -504, 64, -504, 64)
 
 [node name="AlternatePathwayL" parent="LanternPathway4" instance=ExtResource("5_cgq41")]
-position = Vector2(0, 0)
-spawn_rate = 0.75
+position = Vector2(120, -4)
+curve = SubResource("Curve2D_7857x")
+max_health = 300
+spawn_rate = 9.5
 metadata/belongs_to = 2
 
 [node name="AlternatePathwayR" parent="LanternPathway4" instance=ExtResource("5_cgq41")]
 position = Vector2(-48, 0)
 curve = SubResource("Curve2D_osa27")
-spawn_rate = 0.75
+max_health = 300
+spawn_rate = 10.5
 metadata/belongs_to = 2
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -116,3 +175,8 @@ energy = 2.0
 blend_mode = 2
 
 [node name="interface" parent="." instance=ExtResource("4_wodvb")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_iwft7")
+volume_db = -10.0
+autoplay = true

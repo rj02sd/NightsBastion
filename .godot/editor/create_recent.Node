@@ -1,4 +1,9 @@
 Label
+AudioStreamPlayer2D
+Sprite2D
+HSlider
+Marker2D
+CollisionShape2D
 Button
 ColorRect
 RichTextLabel
@@ -11,7 +16,6 @@ CollisionPolygon2D
 RigidBody2D
 Area2D
 Polygon2D
-Sprite2D
 TextureButton
 CanvasLayer
 PathFollow2D

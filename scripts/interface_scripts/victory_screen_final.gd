@@ -2,12 +2,12 @@ extends CanvasLayer
 
 
 func _ready():
-	pass
+	PlayerData.levels_completed = 2
 
 
 func _process(_delta):
-	pass
-
+	%Difficulty.text = "BEAT ON DIFFICULTY: "+str(PlayerData.player_difficulty)
+	%Enemies_Defeated.text = "ENEMIES DEFEATED: "+str(PlayerData.enemies_defeated)
 
 func _on_continue_pressed():
 	PlayerData.control = 0

@@ -44,7 +44,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ky006")
 value = 90.0
 show_percentage = false
 
-[node name="Ability1" type="TextureButton" parent="."]
+[node name="Ability" type="TextureButton" parent="."]
+unique_name_in_owner = true
 modulate = Color(0.835294, 0.462745, 0.462745, 1)
 anchors_preset = -1
 anchor_left = 0.097
@@ -61,7 +62,8 @@ texture_disabled = ExtResource("2_tlg7q")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Ability2" type="TextureButton" parent="."]
+[node name="AbilityCD" type="Label" parent="."]
+unique_name_in_owner = true
 modulate = Color(0.996078, 0.560784, 0.552941, 1)
 anchors_preset = -1
 anchor_left = 0.125
@@ -72,12 +74,9 @@ offset_left = 8.0
 offset_top = 8.12799
 offset_right = -0.320007
 offset_bottom = -0.0480347
-texture_normal = ExtResource("2_tlg7q")
-texture_pressed = ExtResource("2_tlg7q")
-texture_hover = ExtResource("2_tlg7q")
-texture_disabled = ExtResource("2_tlg7q")
-ignore_texture_size = true
-stretch_mode = 0
+text = "XX"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HealthPotion" type="TextureButton" parent="."]
 modulate = Color(1, 0.231373, 0.266667, 1)
@@ -193,3 +192,7 @@ R
 L
 "
 horizontal_alignment = 1
+
+[connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
+[connection signal="pressed" from="HealthPotion" to="." method="_on_health_potion_pressed"]
+[connection signal="pressed" from="ManaPotion" to="." method="_on_mana_potion_pressed"]

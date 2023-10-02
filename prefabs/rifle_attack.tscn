@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhhcbgd3cyynr"]
+
+[ext_resource type="Script" path="res://scripts/rifle_attack.gd" id="1_jcgcs"]
+
+[node name="rifle_attack" type="RigidBody2D" groups=["Attack"]]
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_jcgcs")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+light_mask = 0
+position = Vector2(-16, 0)
+color = Color(0.964706, 0.956863, 0.980392, 1)
+polygon = PackedVector2Array(8, 0, 8, -16, 24, -16, 24, 0, 24, 16, 8, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 0, -8, -16, 8, -16, 8, 0, 8, 16, -8, 16)

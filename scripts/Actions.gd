@@ -228,18 +228,21 @@ func _update_weight():
 	PlayerData.weight = total_weight
 			
 func _on_action_1_pressed():
+	%ClickSound.play()
 	_animate_background()
 	_evaluate_action(action_nums[0])
 	_set_actions()
 
 
 func _on_action_2_pressed():
+	%ClickSound.play()
 	_animate_background()
 	_evaluate_action(action_nums[1])
 	_set_actions()
 
 
 func _on_action_3_pressed():
+	%ClickSound.play()
 	_animate_background()
 	_evaluate_action(action_nums[2])
 	_set_actions()

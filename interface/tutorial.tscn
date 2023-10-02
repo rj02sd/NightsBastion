@@ -1,7 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://drgrsg718uvdb"]
+[gd_scene load_steps=9 format=3 uid="uid://drgrsg718uvdb"]
 
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_j6g4g"]
 [ext_resource type="Script" path="res://scripts/interface_scripts/tutorial.gd" id="1_wvw55"]
+[ext_resource type="PackedScene" uid="uid://de8wwf8e1rglj" path="res://prefabs/lantern_pathway.tscn" id="3_fhbvd"]
+[ext_resource type="PackedScene" uid="uid://cpefbkw16ism5" path="res://prefabs/alternate_pathway.tscn" id="4_bdsuu"]
+
+[sub_resource type="Curve2D" id="Curve2D_6wnth"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -432, -288, 0, 0, 0, 0, -464, -24, 0, 0, 0, 0, -544, 128)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_0ijnr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -320, -224, 0, 0, 0, 0, -488, 168, 0, 0, 0, 0, -536, 184)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_sjv38"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -600, 456, 0, 0, 0, 0, -656, 256, 0, 0, 0, 0, -576, 192)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_4nduq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -408, 424, 0, 0, 0, 0, -496, 272, 0, 0, 0, 0, -576, 192)
+}
+point_count = 3
 
 [node name="tutorial" type="CanvasLayer"]
 script = ExtResource("1_wvw55")
@@ -17,12 +43,41 @@ anchor_left = 0.194
 anchor_top = 0.111
 anchor_right = 0.806
 anchor_bottom = 0.295
-offset_left = 0.511993
-offset_top = -7.92801
-offset_right = -0.512085
-offset_bottom = -0.160004
+offset_left = 168.512
+offset_top = -47.928
+offset_right = -168.512
+offset_bottom = -77.16
 theme = ExtResource("1_j6g4g")
+theme_override_font_sizes/font_size = 70
 text = "TUTORIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.111
+anchor_right = 0.806
+anchor_bottom = 0.295
+offset_left = -31.488
+offset_top = 56.072
+offset_right = 23.488
+offset_bottom = 288.84
+theme = ExtResource("1_j6g4g")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "GATHER RESOURCES TO CRAFT ITEMS
+
+CHECK ITEM LIST FOR DESIRED ITEMS
+
+CLICK ON ITEMS TO VIEW MORE DETAILS AND CRAFT THEM
+
+ONCE YOU CRAFT A WEAPON, DEFEND YOUR LANTERNS
+
+THE GOAL IS TO ATTACK ENEMIES FASTER THAN THEY CAN ATTACK YOU
+
+IF A LANTERN BLACKS OUT, YOU WILL HAVE LESS AREA CONTROL SPACE
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -32,10 +87,10 @@ anchor_left = 0.278
 anchor_top = 0.605
 anchor_right = 0.444
 anchor_bottom = 0.693
-offset_left = -0.256042
-offset_top = -0.0400085
-offset_right = 0.511963
-offset_bottom = -0.0640259
+offset_left = -0.255981
+offset_top = 127.96
+offset_right = 0.511993
+offset_bottom = 127.936
 theme = ExtResource("1_j6g4g")
 text = "BACK"
 
@@ -45,12 +100,67 @@ anchor_left = 0.556
 anchor_top = 0.605
 anchor_right = 0.722
 anchor_bottom = 0.691
-offset_left = -0.512085
-offset_top = -0.0400085
-offset_right = 0.25592
-offset_bottom = 1.23196
+offset_left = -0.511963
+offset_top = 127.96
+offset_right = 0.255981
+offset_bottom = 129.232
 theme = ExtResource("1_j6g4g")
 text = "READY"
+
+[node name="LanternPathway" parent="." instance=ExtResource("3_fhbvd")]
+position = Vector2(1472, 368)
+max_health = 500
+spawn_rate = 2.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway" parent="LanternPathway" instance=ExtResource("4_bdsuu")]
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway2" parent="LanternPathway" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_6wnth")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway3" parent="LanternPathway" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_0ijnr")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway4" parent="LanternPathway" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_sjv38")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="LanternPathway2" parent="." instance=ExtResource("3_fhbvd")]
+position = Vector2(560, 232)
+max_health = 500
+spawn_rate = 2.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway" parent="LanternPathway2" instance=ExtResource("4_bdsuu")]
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway2" parent="LanternPathway2" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_6wnth")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway3" parent="LanternPathway2" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_0ijnr")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway4" parent="LanternPathway2" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_sjv38")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway5" parent="LanternPathway2" instance=ExtResource("4_bdsuu")]
+curve = SubResource("Curve2D_4nduq")
+spawn_rate = 3.0
+ctrl_bleed = 0
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Ready" to="." method="_on_ready_pressed"]

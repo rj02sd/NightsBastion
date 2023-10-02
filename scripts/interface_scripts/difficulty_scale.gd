@@ -6,7 +6,8 @@ func _ready():
 
 
 func _process(_delta):
-	pass
+	%Scale.text = str(snapped(float(%Difficulty.value)/10.0,0.1))
+	PlayerData.player_difficulty = snapped(float(%Difficulty.value)/10.0,0.1)
 
 
 func _on_back_pressed():

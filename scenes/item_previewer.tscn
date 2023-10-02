@@ -130,7 +130,7 @@ offset_bottom = -88.312
 theme = ExtResource("2_upu4h")
 theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 15
 text = "ABILITY 1: ---"
 autowrap_mode = 3
 
@@ -142,13 +142,13 @@ anchor_top = 0.407
 anchor_right = 0.889
 anchor_bottom = 0.519
 offset_left = 152.0
-offset_top = -15.736
+offset_top = 0.264008
 offset_right = 63.8719
-offset_bottom = -56.312
+offset_bottom = -40.312
 theme = ExtResource("2_upu4h")
 theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 15
 text = "ABILITY 2: ---"
 autowrap_mode = 3
 
@@ -162,13 +162,34 @@ anchor_bottom = 0.79
 offset_left = -512.0
 offset_top = -233.288
 offset_right = -720.128
-offset_bottom = 11.08
+offset_bottom = -76.92
 theme = ExtResource("2_upu4h")
 theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem."
 vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Stats" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.556
+anchor_right = 0.889
+anchor_bottom = 0.79
+offset_left = -512.0
+offset_top = 87.712
+offset_right = -720.128
+offset_bottom = 0.0799866
+theme = ExtResource("2_upu4h")
+theme_override_colors/font_color = Color(1, 0.415686, 0.435294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "ATTACK DAMAGE (ATK):
+ATTACK SPEED (SPD):
+MANA EFFECIENCY (EFF):"
+vertical_alignment = 3
 autowrap_mode = 3
 
 [node name="Mod1" parent="." instance=ExtResource("4_oj3xy")]
@@ -190,6 +211,7 @@ offset_right = 1139.0
 offset_bottom = 416.0
 mod_name = "SPD"
 mod_color = Color(0.862745, 0.647059, 0.184314, 1)
+index = 1
 
 [node name="Mod3" parent="." instance=ExtResource("4_oj3xy")]
 unique_name_in_owner = true
@@ -200,6 +222,7 @@ offset_right = 1139.0
 offset_bottom = 464.0
 mod_name = "EFF"
 mod_color = Color(0, 0.858824, 0.988235, 1)
+index = 2
 
 [node name="Mods" type="Label" parent="."]
 unique_name_in_owner = true

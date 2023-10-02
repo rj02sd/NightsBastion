@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://di3vy3rawef35"]
+[gd_scene load_steps=10 format=3 uid="uid://di3vy3rawef35"]
 
 [ext_resource type="Script" path="res://scripts/interface_scripts/main_menu.gd" id="1_rx518"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_xmk75"]
+[ext_resource type="PackedScene" uid="uid://de8wwf8e1rglj" path="res://prefabs/lantern_pathway.tscn" id="3_nefq3"]
+[ext_resource type="PackedScene" uid="uid://cpefbkw16ism5" path="res://prefabs/alternate_pathway.tscn" id="4_nkgtd"]
+[ext_resource type="AudioStream" uid="uid://cpjkv8itro1wa" path="res://music/Radiance-Instrumental.mp3" id="5_8e3a1"]
+
+[sub_resource type="Curve2D" id="Curve2D_pquju"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -407.119, -371.981, 0, 0, 0, 0, -467.406, -207.384, 0, 0, 0, 0, -448, 96)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_35jr1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -468.765, -343.57, 0, 0, 0, 0, -513.052, -206.056, 0, 0, 0, 0, -538.307, -113.752, 0, 0, 0, 0, -568, 96)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_hgtf4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -388.056, -205.57, 0, 0, 0, 0, -450.2, -65.9338, 0, 0, 0, 0, -557.128, 103.271)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ruf2u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -332.63, -173.57, 0, 0, 0, 0, -398.774, -27.0056, 0, 0, 0, 0, -557.128, 103.271)
+}
+point_count = 3
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_rx518")
@@ -19,10 +46,10 @@ anchor_left = 0.412
 anchor_top = 0.494
 anchor_right = 0.583
 anchor_bottom = 0.58
-offset_left = -2.62402
-offset_top = -0.112
-offset_right = 1.38397
-offset_bottom = 0.159973
+offset_left = 293.376
+offset_top = -32.112
+offset_right = 297.384
+offset_bottom = -31.84
 theme = ExtResource("1_xmk75")
 text = "PLAY"
 
@@ -32,37 +59,39 @@ anchor_left = 0.412
 anchor_top = 0.593
 anchor_right = 0.583
 anchor_bottom = 0.679
-offset_left = -2.62402
-offset_top = -0.264038
-offset_right = 1.38397
-offset_bottom = 0.00799561
+offset_left = 293.376
+offset_top = -32.264
+offset_right = 297.384
+offset_bottom = -31.992
 theme = ExtResource("1_xmk75")
 text = "TUTORIAL"
 
-[node name="Settings" type="Button" parent="."]
+[node name="Controls" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.41
 anchor_top = 0.691
 anchor_right = 0.583
 anchor_bottom = 0.778
-offset_left = -0.320038
-offset_top = 0.231964
-offset_right = 1.38397
-offset_bottom = -0.144043
+offset_left = 295.68
+offset_top = -31.768
+offset_right = 297.384
+offset_bottom = -32.144
 theme = ExtResource("1_xmk75")
-text = "SETTINGS"
+text = "CONTROLS"
 
 [node name="Credits" type="Button" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.41
 anchor_top = 0.79
 anchor_right = 0.583
 anchor_bottom = 0.877
-offset_left = -0.320038
-offset_top = 0.0799866
-offset_right = 1.38397
-offset_bottom = -0.296021
+offset_left = 295.68
+offset_top = -31.92
+offset_right = 297.384
+offset_bottom = -32.296
 theme = ExtResource("1_xmk75")
+disabled = true
 text = "CREDITS"
 
 [node name="Title" type="Label" parent="."]
@@ -71,11 +100,52 @@ anchor_left = 0.182
 anchor_top = 0.151
 anchor_right = 0.839
 anchor_bottom = 0.347
-offset_left = -33.664
-offset_top = -1.84799
-offset_right = 10.472
-offset_bottom = -1.85599
+offset_left = -41.664
+offset_top = -25.848
+offset_right = 2.47205
+offset_bottom = -25.856
 theme = ExtResource("1_xmk75")
+theme_override_colors/font_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_colors/font_shadow_color = Color(0.792157, 0.454902, 0.929412, 1)
 text = "NIGHT'S BASTION"
 
+[node name="LanternPathway" parent="." instance=ExtResource("3_nefq3")]
+position = Vector2(497.931, 814.885)
+rotation = 1.0472
+scale = Vector2(1, 1.02322)
+curve = SubResource("Curve2D_pquju")
+spawn_rate = 3.0
+ctrl_bleed = 0
+
+[node name="AlternatePathway" parent="LanternPathway" instance=ExtResource("4_nkgtd")]
+curve = SubResource("Curve2D_35jr1")
+spawn_rate = 3.1
+
+[node name="AlternatePathway2" parent="LanternPathway" instance=ExtResource("4_nkgtd")]
+curve = SubResource("Curve2D_hgtf4")
+spawn_rate = 2.9
+
+[node name="AlternatePathway3" parent="LanternPathway" instance=ExtResource("4_nkgtd")]
+curve = SubResource("Curve2D_ruf2u")
+spawn_rate = 3.3
+
+[node name="Theme" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 192.0
+offset_right = 488.0
+offset_bottom = 245.0
+theme = ExtResource("1_xmk75")
+theme_override_colors/font_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "[Limited Space]"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8e3a1")
+volume_db = -5.0
+autoplay = true
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

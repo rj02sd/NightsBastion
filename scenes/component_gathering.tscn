@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8upgdsvq3vqq"]
+[gd_scene load_steps=10 format=3 uid="uid://b8upgdsvq3vqq"]
 
 [ext_resource type="Script" path="res://scripts/component_gathering.gd" id="1_nuo2g"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_uek34"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cl7e1cuf1xe5w" path="res://scenes/scene_components/Resources.tscn" id="4_0muhp"]
 [ext_resource type="PackedScene" uid="uid://my8ief4pn3u0" path="res://scenes/item_list.tscn" id="4_xkfhr"]
 [ext_resource type="PackedScene" uid="uid://rl1wlgdywfpx" path="res://scenes/scene_components/ResourceRemover.tscn" id="5_wrxn5"]
+[ext_resource type="AudioStream" uid="uid://bd2jvloyw3py8" path="res://music/SeeTheLight_Seva_Enhanced.mp3" id="7_06pfa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdf8s"]
 bg_color = Color(0.6, 0.937255, 0.960784, 1)
@@ -182,6 +183,7 @@ horizontal_alignment = 1
 
 [node name="Skip" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 968.0
 offset_top = 592.0
 offset_right = 1136.0
@@ -209,6 +211,11 @@ offset_right = 712.0
 offset_bottom = 448.0
 theme = ExtResource("1_uek34")
 text = "START"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_06pfa")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="ItemList" to="." method="_on_item_list_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

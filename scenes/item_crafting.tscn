@@ -94,6 +94,7 @@ theme_override_font_sizes/font_size = 15
 text = "Inventory"
 
 [node name="Weapons" parent="." instance=ExtResource("4_w82qq")]
+unique_name_in_owner = true
 offset_left = 46.576
 offset_top = 39.944
 offset_right = 46.128
@@ -101,7 +102,6 @@ offset_bottom = 40.208
 
 [node name="Misc" parent="." instance=ExtResource("5_o3e1r")]
 unique_name_in_owner = true
-visible = false
 offset_left = 45.936
 offset_top = 39.944
 offset_right = 46.192

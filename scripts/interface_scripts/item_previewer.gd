@@ -4,6 +4,10 @@ var item_index = -1
 var weight_preview = 0.0
 var potions = 0
 
+var mod1_val = 0
+var mod2_val = 0
+var mod3_val = 0
+
 func _ready():
 	
 	if not PlayerData.resources_gathered:
@@ -33,10 +37,11 @@ func _ready():
 			%x5.visible = true
 			%x10.visible = true
 			%Potions.visible = true
+			%Stats.visible = false
 		else:
-			%AutoAttack.text = ItemDefinitions.items[item_index][2].attack
-			%Ability1.text = ItemDefinitions.items[item_index][2].ability1
-			%Ability2.text = ItemDefinitions.items[item_index][2].ability2
+			%AutoAttack.text = "Attack: "+ItemDefinitions.items[item_index][2].attack
+			%Ability1.text = "Ability 1: "+ItemDefinitions.items[item_index][2].ability1
+			%Ability2.text = "Ability 2: "+ItemDefinitions.items[item_index][2].ability2
 
 
 func _process(_delta):
@@ -44,6 +49,14 @@ func _process(_delta):
 	%WeightProgress.value = PlayerData.combat_weight + weight_preview
 	%WeightProgress.get_child(0).text = "POST PURCHASE WEIGHT: "+str(PlayerData.combat_weight + weight_preview)+" kgs"
 	%Potions.text = str(potions)
+	
+	if item_index == 0:	
+		mod1_val = %Mod1.mod_amp*ItemDefinitions.items[item_index][2].amp_multiplier * 0.5
+		mod2_val = %Mod2.mod_amp*ItemDefinitions.items[item_index][2].amp_multiplier * -0.05
+		mod3_val = %Mod3.mod_amp*ItemDefinitions.items[item_index][2].amp_multiplier * 0.1
+		%Stats.text = ("ATTACK DAMAGE (ATK): "+str(ItemDefinitions.items[item_index][2].atk_base+mod1_val)+
+		"\nATTACK SPEED (SPD): "+str(ItemDefinitions.items[item_index][2].spd_base+mod2_val)+
+		"\nMANA EFFECIENCY (EFF): "+str(ItemDefinitions.items[item_index][2].eff_base+mod3_val))
 	
 	if (PlayerData.combat_weight + weight_preview) > PlayerData.combat_max_weight:
 		%Craft.disabled = true
@@ -109,6 +122,9 @@ func _on_craft_pressed():
 		PlayerData.player_resources.titanium -= ItemDefinitions.items[item_index][2].titanium_cost
 		PlayerData.player_resources.cog_wheels -= ItemDefinitions.items[item_index][2].cogwheel_cost
 		PlayerData.player_resources.elder_flowers -= ItemDefinitions.items[item_index][2].elderflower_cost
+		ItemDefinitions.items[item_index][2].atk_base += mod1_val
+		ItemDefinitions.items[item_index][2].spd_base += mod2_val
+		ItemDefinitions.items[item_index][2].eff_base += mod3_val
 		
 	if ItemDefinitions.items[item_index][1] == 1:
 		PlayerData.player_resources.feathers -= ItemDefinitions.items[item_index][2].feather_cost * potions

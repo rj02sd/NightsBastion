@@ -2,6 +2,7 @@ extends Control
 
 @export var mod_name:String
 @export var mod_color:Color
+@export var index:int
 
 var mod_amp = 1
 
@@ -18,12 +19,14 @@ func _process(delta):
 
 
 func _on_add_pressed():
-	if mod_amp < 5 and (get_parent().weight_preview+PlayerData.combat_weight)<=PlayerData.combat_max_weight:
-		mod_amp += 1
-		get_parent().weight_preview += 5
+	if get_parent() != null:
+		if mod_amp < 5 and (get_parent().weight_preview+PlayerData.combat_weight)<PlayerData.combat_max_weight:
+			mod_amp += 1
+			get_parent().weight_preview += 5
 
 
 func _on_subtract_pressed():
-	if mod_amp > 0:
-		mod_amp -= 1
-		get_parent().weight_preview -= 5
+	if get_parent() != null:
+		if mod_amp > 0:
+			mod_amp -= 1
+			get_parent().weight_preview -= 5

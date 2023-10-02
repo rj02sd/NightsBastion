@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://fy6kf443oqfk"]
+[gd_scene load_steps=8 format=3 uid="uid://fy6kf443oqfk"]
 
 [ext_resource type="Script" path="res://scripts/Actions.gd" id="1_kdthk"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_m4rk0"]
+[ext_resource type="AudioStream" uid="uid://bvl2t6p2eybsb" path="res://sfx/action.wav" id="3_i7aax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqquw"]
 bg_color = Color(0.129412, 0.0627451, 0.0627451, 1)
@@ -184,6 +185,12 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "ACTION DESCRIPTION"
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_i7aax")
+volume_db = -25.0
+pitch_scale = 0.5
 
 [connection signal="pressed" from="Action1" to="." method="_on_action_1_pressed"]
 [connection signal="pressed" from="Action2" to="." method="_on_action_2_pressed"]
