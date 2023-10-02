@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd6qjh0ohldls"]
+[gd_scene load_steps=3 format=3 uid="uid://dd6qjh0ohldls"]
 
 [ext_resource type="PackedScene" uid="uid://cohg02xyjmrce" path="res://scenes/scene_components/Item.tscn" id="1_0joqn"]
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="2_lhk3d"]
 
 [node name="Misc" type="GridContainer"]
 anchors_preset = -1
@@ -18,8 +19,18 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+index = 3
+icon = ExtResource("2_lhk3d")
+weapon_name = "HEALTH POTION"
+feather_cost = 10
+elderflower_cost = 20
 
 [node name="Item2" parent="." instance=ExtResource("1_0joqn")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+index = 4
+icon = ExtResource("2_lhk3d")
+weapon_name = "MANA POTION"
+feather_cost = 20
+elderflower_cost = 10

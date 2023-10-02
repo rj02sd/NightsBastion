@@ -21,6 +21,7 @@ offset_bottom = 7.776
 color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
 [node name="WeightProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.222
 anchor_top = 0.049
@@ -35,6 +36,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_080wq")
 show_percentage = false
 
 [node name="Weight" type="Label" parent="WeightProgress"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_top = 40.0
 offset_right = 640.0
@@ -50,15 +52,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Continue" type="Button" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.778
 anchor_top = 0.802
 anchor_right = 0.944
 anchor_bottom = 0.877
 offset_left = -0.256042
-offset_top = 0.303955
+offset_top = -31.696
 offset_right = 0.511963
-offset_bottom = 0.703979
+offset_bottom = -31.296
 theme = ExtResource("1_x2sv7")
 text = "CONTINUE"
 
@@ -74,25 +77,46 @@ offset_bottom = -39.872
 scale = Vector2(2, 2)
 
 [node name="Inventory" type="Label" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.889
 anchor_top = 0.247
 anchor_right = 0.965
 anchor_bottom = 0.37
-offset_left = -0.128052
-offset_top = -0.0559998
-offset_right = -1.68005
-offset_bottom = -1.76004
+offset_left = -346.128
+offset_top = 327.944
+offset_right = -347.68
+offset_bottom = 326.24
 theme = ExtResource("1_x2sv7")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
 theme_override_font_sizes/font_size = 15
-text = "HP ---
-Energy ---
-Weapon ---"
+text = "Inventory"
 
 [node name="Weapons" parent="." instance=ExtResource("4_w82qq")]
+offset_left = 46.576
+offset_top = 39.944
+offset_right = 46.128
+offset_bottom = 40.208
 
 [node name="Misc" parent="." instance=ExtResource("5_o3e1r")]
+unique_name_in_owner = true
+visible = false
+offset_left = 45.936
+offset_top = 39.944
+offset_right = 46.192
+offset_bottom = 41.904
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 112.0
+offset_right = 1112.0
+offset_bottom = 178.0
+theme = ExtResource("1_x2sv7")
+theme_override_colors/font_shadow_color = Color(0.694118, 0, 0.270588, 1)
+theme_override_font_sizes/font_size = 50
+text = "CRAFT YOUR ARSENAL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

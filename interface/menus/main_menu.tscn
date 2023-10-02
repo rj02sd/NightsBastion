@@ -11,7 +11,7 @@ anchors_preset = -1
 anchor_right = 0.999
 anchor_bottom = 1.0
 offset_right = 0.151855
-color = Color(0, 0.564706, 0.439216, 1)
+color = Color(0.0352941, 0.0470588, 0.156863, 1)
 
 [node name="Play" type="Button" parent="."]
 anchors_preset = -1
@@ -71,11 +71,11 @@ anchor_left = 0.182
 anchor_top = 0.151
 anchor_right = 0.839
 anchor_bottom = 0.347
-offset_left = 0.335983
-offset_top = 0.151993
-offset_right = 0.471924
-offset_bottom = 0.143997
+offset_left = -33.664
+offset_top = -1.84799
+offset_right = 10.472
+offset_bottom = -1.85599
 theme = ExtResource("1_xmk75")
-text = "UNTITLED GAME"
+text = "NIGHT'S BASTION"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

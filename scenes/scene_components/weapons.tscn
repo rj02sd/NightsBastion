@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://crdfpb0i3lfvc"]
+[gd_scene load_steps=3 format=3 uid="uid://crdfpb0i3lfvc"]
 
 [ext_resource type="PackedScene" uid="uid://cohg02xyjmrce" path="res://scenes/scene_components/Item.tscn" id="1_pux25"]
+[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="2_ndujh"]
 
 [node name="Weapons" type="GridContainer"]
 anchors_preset = -1
@@ -14,27 +15,47 @@ offset_right = 0.127991
 offset_bottom = 0.207977
 columns = 5
 
-[node name="Item" parent="." instance=ExtResource("1_pux25")]
+[node name="Item1" parent="." instance=ExtResource("1_pux25")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+icon = ExtResource("2_ndujh")
+weapon_name = "STANDARD SWORD"
 
 [node name="Item2" parent="." instance=ExtResource("1_pux25")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+index = 1
+icon = ExtResource("2_ndujh")
+weapon_name = "AUTOMATIC RIFLE"
+feather_cost = 200
+titanium_cost = 5
+cogwheel_cost = 30
 
 [node name="Item3" parent="." instance=ExtResource("1_pux25")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+index = 2
+icon = ExtResource("2_ndujh")
+weapon_name = "DEATH DEALER AXE"
+titanium_cost = 20
+cogwheel_cost = 5
+elderflower_cost = 100
 
 [node name="Item4" parent="." instance=ExtResource("1_pux25")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
+icon = ExtResource("2_ndujh")
+weapon_name = "???"
 
 [node name="Item5" parent="." instance=ExtResource("1_pux25")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
+icon = ExtResource("2_ndujh")
+weapon_name = "???"

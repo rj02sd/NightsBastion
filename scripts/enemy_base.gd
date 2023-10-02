@@ -48,4 +48,5 @@ func _self_destruct():
 func _on_area_2d_body_entered(body):
 	if body.get_groups()[0] == "Attack":
 		health -= body.damage
+		PlayerData.control += body.damage
 		_transform_color()

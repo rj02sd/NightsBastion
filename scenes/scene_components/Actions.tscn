@@ -1,121 +1,190 @@
-[gd_scene load_steps=2 format=3 uid="uid://fy6kf443oqfk"]
+[gd_scene load_steps=7 format=3 uid="uid://fy6kf443oqfk"]
 
+[ext_resource type="Script" path="res://scripts/Actions.gd" id="1_kdthk"]
 [ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="1_m4rk0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqquw"]
+bg_color = Color(0.129412, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6ymt"]
+bg_color = Color(0.282353, 0.141176, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anlbk"]
+bg_color = Color(0.568627, 0.192157, 0.619608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0cd1"]
+bg_color = Color(0.0941176, 0, 0.227451, 1)
 
 [node name="Actions" type="Control"]
 layout_mode = 3
-anchor_left = 0.111
+anchor_left = 0.194
 anchor_top = 0.296
-anchor_right = 0.722
+anchor_right = 0.806
 anchor_bottom = 0.889
-offset_left = -127.872
+offset_left = -223.488
 offset_top = -191.808
-offset_right = 320.256
+offset_right = 223.488
 offset_bottom = 71.928
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kdthk")
 
-[node name="Action1" type="ColorRect" parent="."]
+[node name="Animation" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.403922, 0, 0.772549, 0)
+
+[node name="Border1" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 224.0
+offset_top = 224.0
+offset_right = 416.0
+offset_bottom = 576.0
+color = Color(0.733333, 0, 0.4, 0.996078)
+
+[node name="Border2" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 480.0
+offset_top = 224.0
+offset_right = 672.0
+offset_bottom = 576.0
+color = Color(0.733333, 0, 0.4, 0.996078)
+
+[node name="Border3" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 736.0
+offset_top = 224.0
+offset_right = 928.0
+offset_bottom = 576.0
+color = Color(0.733333, 0, 0.4, 0.996078)
+
+[node name="Action1" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.111
 anchor_top = 0.346
 anchor_right = 0.278
 anchor_bottom = 0.889
-offset_left = 96.128
-offset_top = -0.207977
-offset_right = 95.744
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
-
-[node name="Icon" type="ColorRect" parent="Action1"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action1"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
+offset_left = 104.128
+offset_top = 7.79201
+offset_right = 87.744
+offset_bottom = -8.07202
 theme = ExtResource("1_m4rk0")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rqquw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n6ymt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_anlbk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0cd1")
+
+[node name="Icon" type="TextureRect" parent="Action1"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -32.0
+offset_right = 120.0
+offset_bottom = 32.0
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Action1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 168.0
+offset_bottom = 288.0
+mouse_filter = 2
+theme = ExtResource("1_m4rk0")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
 text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
 
-[node name="Action2" type="ColorRect" parent="."]
+[node name="Action2" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.333
 anchor_top = 0.346
 anchor_right = 0.5
 anchor_bottom = 0.889
-offset_left = 96.384
-offset_top = -0.207977
-offset_right = 96.0
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
-
-[node name="Icon" type="ColorRect" parent="Action2"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action2"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
+offset_left = 104.384
+offset_top = 7.79201
+offset_right = 88.0
+offset_bottom = -8.07202
 theme = ExtResource("1_m4rk0")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rqquw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n6ymt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_anlbk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0cd1")
+
+[node name="Icon" type="TextureRect" parent="Action2"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -32.0
+offset_right = 120.0
+offset_bottom = 32.0
+mouse_force_pass_scroll_events = false
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Action2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 168.0
+offset_bottom = 288.0
+mouse_filter = 2
+theme = ExtResource("1_m4rk0")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
 text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
 
-[node name="Action3" type="ColorRect" parent="."]
+[node name="Action3" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.556
 anchor_top = 0.346
 anchor_right = 0.722
 anchor_bottom = 0.889
-offset_left = 95.4879
-offset_top = -0.207977
-offset_right = 96.2559
-offset_bottom = -0.0720215
-color = Color(0.4, 0, 0.254902, 1)
-
-[node name="Icon" type="ColorRect" parent="Action3"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[node name="Description" type="Label" parent="Action3"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 288.0
+offset_left = 103.488
+offset_top = 7.79201
+offset_right = 88.256
+offset_bottom = -8.07202
 theme = ExtResource("1_m4rk0")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rqquw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n6ymt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_anlbk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0cd1")
+
+[node name="Icon" type="TextureRect" parent="Action3"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -32.0
+offset_right = 120.0
+offset_bottom = 32.0
+mouse_force_pass_scroll_events = false
+expand_mode = 1
+
+[node name="Description" type="RichTextLabel" parent="Action3"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 168.0
+offset_bottom = 288.0
+mouse_filter = 2
+theme = ExtResource("1_m4rk0")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
 text = "ACTION DESCRIPTION"
-horizontal_alignment = 1
+
+[connection signal="pressed" from="Action1" to="." method="_on_action_1_pressed"]
+[connection signal="pressed" from="Action2" to="." method="_on_action_2_pressed"]
+[connection signal="pressed" from="Action3" to="." method="_on_action_3_pressed"]

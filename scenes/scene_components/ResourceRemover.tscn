@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rl1wlgdywfpx"]
+[gd_scene load_steps=6 format=3 uid="uid://rl1wlgdywfpx"]
 
-[ext_resource type="Texture2D" uid="uid://b8302g4idhequ" path="res://art/ui/white_square_sprite.png" id="1_4l4ex"]
+[ext_resource type="Script" path="res://scripts/interface_scripts/ResourceRemover.gd" id="1_4re8y"]
+[ext_resource type="PackedScene" uid="uid://cl7e1cuf1xe5w" path="res://scenes/scene_components/Resources.tscn" id="1_y5154"]
 [ext_resource type="Texture2D" uid="uid://b4tnlriidsmy5" path="res://art/ui/ArrowDown.png" id="2_4n2mf"]
+[ext_resource type="Theme" uid="uid://lrvuwqkgvays" path="res://themes/default_theme.tres" id="4_nn0gj"]
 
 [sub_resource type="Theme" id="Theme_38wq4"]
 
@@ -9,35 +11,26 @@
 layout_mode = 3
 anchor_right = 0.319
 anchor_bottom = 0.198
-offset_right = 0.511993
-offset_bottom = -0.304016
+offset_right = 96.512
+offset_bottom = 65.696
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
+script = ExtResource("1_4re8y")
 
-[node name="R1" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 80.0
-texture = ExtResource("1_4l4ex")
-expand_mode = 1
+[node name="Resources" parent="." instance=ExtResource("1_y5154")]
+layout_mode = 1
+offset_right = 158.032
+offset_bottom = 88.064
+scale = Vector2(2, 2)
+weight_mode = true
 
-[node name="Label" type="Label" parent="R1"]
+[node name="Down1" type="TextureButton" parent="."]
 layout_mode = 0
-offset_top = 84.0
-offset_right = 80.0
-offset_bottom = 116.0
-theme = SubResource("Theme_38wq4")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Down" type="TextureButton" parent="R1"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 116.0
-offset_right = 72.0
-offset_bottom = 166.0
+offset_left = 12.0
+offset_top = 124.0
+offset_right = 76.0
+offset_bottom = 174.0
 theme = SubResource("Theme_38wq4")
 texture_normal = ExtResource("2_4n2mf")
 texture_pressed = ExtResource("2_4n2mf")
@@ -46,28 +39,12 @@ texture_disabled = ExtResource("2_4n2mf")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="R2" type="TextureRect" parent="."]
+[node name="Down2" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 96.0
-offset_right = 176.0
-offset_bottom = 80.0
-texture = ExtResource("1_4l4ex")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="R2"]
-offset_top = 84.0
-offset_right = 80.0
-offset_bottom = 116.0
-theme = SubResource("Theme_38wq4")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Down" type="TextureButton" parent="R2"]
-offset_left = 8.0
-offset_top = 116.0
-offset_right = 72.0
-offset_bottom = 166.0
+offset_left = 136.0
+offset_top = 124.0
+offset_right = 200.0
+offset_bottom = 174.0
 theme = SubResource("Theme_38wq4")
 texture_normal = ExtResource("2_4n2mf")
 texture_pressed = ExtResource("2_4n2mf")
@@ -76,28 +53,12 @@ texture_disabled = ExtResource("2_4n2mf")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="R3" type="TextureRect" parent="."]
+[node name="Down3" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 192.0
-offset_right = 272.0
-offset_bottom = 80.0
-texture = ExtResource("1_4l4ex")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="R3"]
-offset_top = 84.0
-offset_right = 80.0
-offset_bottom = 116.0
-theme = SubResource("Theme_38wq4")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Down" type="TextureButton" parent="R3"]
-offset_left = 8.0
-offset_top = 116.0
-offset_right = 72.0
-offset_bottom = 166.0
+offset_left = 264.0
+offset_top = 124.0
+offset_right = 328.0
+offset_bottom = 174.0
 theme = SubResource("Theme_38wq4")
 texture_normal = ExtResource("2_4n2mf")
 texture_pressed = ExtResource("2_4n2mf")
@@ -106,28 +67,12 @@ texture_disabled = ExtResource("2_4n2mf")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="R4" type="TextureRect" parent="."]
+[node name="Down4" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 288.0
-offset_right = 368.0
-offset_bottom = 80.0
-texture = ExtResource("1_4l4ex")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="R4"]
-offset_top = 84.0
-offset_right = 80.0
-offset_bottom = 116.0
-theme = SubResource("Theme_38wq4")
-text = "---"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Down" type="TextureButton" parent="R4"]
-offset_left = 8.0
-offset_top = 116.0
-offset_right = 72.0
-offset_bottom = 166.0
+offset_left = 392.0
+offset_top = 124.0
+offset_right = 456.0
+offset_bottom = 174.0
 theme = SubResource("Theme_38wq4")
 texture_normal = ExtResource("2_4n2mf")
 texture_pressed = ExtResource("2_4n2mf")
@@ -135,3 +80,32 @@ texture_hover = ExtResource("2_4n2mf")
 texture_disabled = ExtResource("2_4n2mf")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Undo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 180.0
+offset_right = 224.0
+offset_bottom = 206.0
+theme = ExtResource("4_nn0gj")
+theme_override_font_sizes/font_size = 20
+text = "UNDO"
+
+[node name="Confirm" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 180.0
+offset_right = 352.0
+offset_bottom = 206.0
+theme = ExtResource("4_nn0gj")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "CONFIRM"
+
+[connection signal="pressed" from="Down1" to="." method="_on_down_1_pressed"]
+[connection signal="pressed" from="Down2" to="." method="_on_down_2_pressed"]
+[connection signal="pressed" from="Down3" to="." method="_on_down_3_pressed"]
+[connection signal="pressed" from="Down4" to="." method="_on_down_4_pressed"]
+[connection signal="pressed" from="Undo" to="." method="_on_undo_pressed"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

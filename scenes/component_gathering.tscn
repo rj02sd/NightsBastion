@@ -17,14 +17,16 @@ bg_color = Color(0.929412, 0.717647, 0.392157, 1)
 script = ExtResource("1_nuo2g")
 
 [node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_right = 0.997
 anchor_bottom = 0.988
 offset_right = 11.4561
 offset_bottom = 7.776
-color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+color = Color(0, 0.172549, 1, 1)
 
 [node name="EnergyProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.028
 anchor_top = 0.074
@@ -38,6 +40,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_bdf8s")
 show_percentage = false
 
 [node name="Energy" type="Label" parent="EnergyProgress"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
@@ -52,6 +55,7 @@ text = "ENERGY: ---"
 vertical_alignment = 1
 
 [node name="Time_left" type="Label" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.333
 anchor_top = 0.037
@@ -72,6 +76,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WeightProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.75
 anchor_top = 0.074
@@ -86,6 +91,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_7tgud")
 show_percentage = false
 
 [node name="Weight" type="Label" parent="WeightProgress"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
@@ -96,10 +102,11 @@ theme_override_colors/font_shadow_color = Color(1, 0.384314, 0, 0.309804)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 25
-text = "WEIGHT: ---"
+text = "SPACE LEFT: ---"
 vertical_alignment = 1
 
 [node name="Actions" parent="." instance=ExtResource("3_d54gi")]
+unique_name_in_owner = true
 visible = false
 
 [node name="Resources" parent="." instance=ExtResource("4_0muhp")]
@@ -127,6 +134,8 @@ theme_override_font_sizes/font_size = 20
 text = "ITEMS"
 
 [node name="Continue" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
 anchors_preset = -1
 anchor_left = 0.389
 anchor_top = 0.593
@@ -140,23 +149,68 @@ theme = ExtResource("1_uek34")
 text = "CONTINUE"
 
 [node name="ResourceRemover" parent="." instance=ExtResource("5_wrxn5")]
+unique_name_in_owner = true
 visible = false
-offset_left = 208.0
-offset_top = 200.0
+offset_left = 112.0
+offset_top = 168.0
 offset_right = 208.512
-offset_bottom = 199.696
+offset_bottom = 229.696
 
 [node name="item_list" parent="." instance=ExtResource("4_xkfhr")]
 unique_name_in_owner = true
 visible = false
 
-[node name="Label" type="Label" parent="."]
+[node name="NightApproaches" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
 offset_left = 80.0
 offset_top = 192.0
 offset_right = 1070.0
 offset_bottom = 319.0
 theme = ExtResource("1_uek34")
-text = "NIGHT APPROACHES"
+text = "NO MORE ACTIONS"
+
+[node name="Info" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 80.0
+offset_top = 192.0
+offset_right = 1070.0
+offset_bottom = 319.0
+theme = ExtResource("1_uek34")
+text = "GATHER SUPPLIES"
+horizontal_alignment = 1
+
+[node name="Skip" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 968.0
+offset_top = 592.0
+offset_right = 1136.0
+offset_bottom = 624.0
+theme = ExtResource("1_uek34")
+theme_override_font_sizes/font_size = 20
+text = "SKIP PHASE"
+
+[node name="Label" type="Label" parent="Skip"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 135.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 10
+text = "NOT RECOMMENDED"
+
+[node name="StartGathering" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 440.0
+offset_top = 384.0
+offset_right = 712.0
+offset_bottom = 448.0
+theme = ExtResource("1_uek34")
+text = "START"
 
 [connection signal="pressed" from="ItemList" to="." method="_on_item_list_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="StartGathering" to="." method="_on_start_gathering_pressed"]

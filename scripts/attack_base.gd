@@ -1,7 +1,8 @@
 extends RigidBody2D
 
-var active_time = 0.2
+var active_time = 0.15
 var damage = 3
+var attack_ready = false
 
 func _ready():
 	_attack_animation()

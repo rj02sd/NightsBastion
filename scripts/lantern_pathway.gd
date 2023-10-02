@@ -3,9 +3,14 @@ extends Path2D
 var enemy = preload("res://prefabs/enemy_base.tscn")
 
 @export var max_health = 100
-var health
+var health = 100
 @export var spawn_rate:float
 var spawner_active = true
+var spawn_rate_decrease = 0.01
+var spawn_rate_minimum = 0.1
+@export var ctrl_bleed = 5
+var enemy_speed_increase = 0
+var enemy_speed_increase_rate = 0.1
 
 func _ready():
 	health = max_health
@@ -15,8 +20,12 @@ func _ready():
 	%HealthTween.value = max_health
 	_spawn_enemies()
 
-func _process(_delta):
-	pass
+func _process(delta):
+	enemy_speed_increase = enemy_speed_increase_rate * delta
+	if spawn_rate > spawn_rate_minimum:
+		spawn_rate -= spawn_rate_decrease * delta
+	if health <= 0:
+		PlayerData.control -= ctrl_bleed * delta
 
 func _update_health_bar():
 	if health <= 0:
@@ -32,9 +41,9 @@ func _on_destroyed():
 		if alt.get_meta("belongs_to") == get_meta("lantern_num"):
 			alt.spawner_active = false
 	
-	for enemy in get_tree().get_nodes_in_group("Enemy"):
-		if enemy.get_meta("target") == get_meta("lantern_num"):
-			enemy.queue_free()
+	for enemy_ref in get_tree().get_nodes_in_group("Enemy"):
+		if enemy_ref.get_meta("target") == get_meta("lantern_num"):
+			enemy_ref.queue_free()
 			
 	_darken_lights()
 			
@@ -58,7 +67,8 @@ func _turn_off_lights():
 func _spawn_enemies():
 	if PlayerData.activate_spawners:
 		var curr_enemy = enemy.instantiate()
-
+		curr_enemy.speed += enemy_speed_increase
+		
 		if has_meta("lantern_num"):
 			curr_enemy.set_meta("target",get_meta("lantern_num"))
 		elif has_meta("belongs_to"):
@@ -74,6 +84,7 @@ func _take_damage(damage):
 	var percent_health = float(health)/float(max_health)
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
+	PlayerData.control -= damage
 	tween.tween_property(%Lantern/Light1,"energy",%Lantern/Light1.energy*percent_health+0.2,1)
 	tween.tween_property(%Lantern/Light2,"energy",%Lantern/Light2.energy*percent_health+0.2,1)
 	_update_health_bar()

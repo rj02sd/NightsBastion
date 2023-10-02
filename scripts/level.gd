@@ -24,7 +24,7 @@ func _check_loss_condition():
 		if lantern.health > 0:
 			lose = false
 	if lose:
-		await get_tree().create_timer(8,false).timeout
+		await get_tree().create_timer(5.5,false).timeout
 		_lose()	
 
 func _check_win_condition():
@@ -33,9 +33,11 @@ func _check_win_condition():
 		_win()
 
 func _lose():
+	PlayerData.in_game = false
 	get_tree().change_scene_to_file("res://interface/death_screen.tscn")
 
 func _win():
+	PlayerData.in_game = false
 	if level_num == 0:
 		get_tree().change_scene_to_file("res://interface/victory_screen.tscn")
 	elif level_num == 1:

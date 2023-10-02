@@ -28,6 +28,7 @@ offset_top = 0.224
 offset_right = -3.87207
 offset_bottom = -1.08
 theme = ExtResource("2_jwww6")
+theme_override_colors/font_shadow_color = Color(0, 0.647059, 0, 1)
 text = "CRAFTABLE ITEMS"
 
 [node name="Weapons" parent="." instance=ExtResource("2_dbl7c")]
